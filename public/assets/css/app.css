@@ -1,0 +1,3428 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap");
+
+html,
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 320px;
+}
+
+.header {
+    width: 100%;
+    background-color: #111111;
+    margin: 0;
+    height: 7rem;
+}
+
+.header__nav {
+    max-width: 1420px;
+    margin: 0 auto;
+}
+
+.header__nav p {
+    display: none;
+}
+
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    width: 100%;
+    max-width: 1420px;
+    z-index: 9;
+}
+
+.navbar__burger {
+    padding: 0.5rem;
+    background-color: #fff;
+    border: none;
+    font-size: 1.8rem;
+}
+
+.navbar__burger:hover {
+    cursor: pointer;
+}
+
+.navbar__burger img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar__left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__left h1 {
+    color: #111111;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    text-align: center;
+    font-family: "Archivo", sans-serif;
+    box-shadow: 0 0.8rem 1.5rem 0 rgba(139, 139, 139, 0.2509803922);
+}
+
+.navbar__left h2 {
+    padding: 2rem;
+    font-size: 1rem;
+    color: #111111;
+    font-family: "Archivo", sans-serif;
+    font-weight: 400;
+}
+
+.navbar__center {
+    display: none;
+    background-color: white;
+    margin-top: 15rem;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    left: 0;
+    padding: 0.8rem;
+}
+
+.navbar__center__link {
+    display: block;
+    padding: 0.8rem;
+    color: #111;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    line-height: 1.125rem;
+}
+
+.navbar__center__link:hover {
+    color: #000;
+}
+
+.navbar__right {
+    display: flex;
+}
+
+.navbar__right__button {
+    padding: 0.5rem;
+    margin-right: 1rem;
+    background-color: #fff;
+    border: 0.125rem solid rgba(133, 133, 133, 0.3019607843);
+    display: flex;
+}
+
+.navbar__right__button:hover {
+    cursor: pointer;
+}
+
+.navbar__right__button img {
+    width: 1rem;
+    height: 1rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .header {
+        display: block;
+        width: 100%;
+        background-color: #111111;
+        margin: 0;
+        height: 7rem;
+    }
+
+    .header__nav p {
+        display: block;
+        padding: 1rem 0 0;
+        color: #fff;
+    }
+
+    .navbar {
+        margin: 0 auto;
+        transform: translateY(10%);
+        padding: 0.5rem;
+        position: static;
+    }
+
+    .navbar__burger {
+        display: none;
+    }
+
+    .navbar__left h1 {
+        transform: scale(1.5);
+    }
+
+    .navbar__left h2 {
+        padding: 2rem;
+        font-size: 2rem;
+        color: #111111;
+        font-family: "Archivo", sans-serif;
+        font-weight: 400;
+    }
+
+    .navbar__center {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0;
+        position: static;
+        width: auto;
+    }
+
+    .navbar__center a {
+        padding: 2rem;
+        color: #111111;
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+        font-family: "Archivo", sans-serif;
+    }
+
+    .navbar__right img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .fixed {
+        position: fixed;
+        transition: all 3s ease-out;
+        z-index: 10;
+    }
+
+    .normal {
+        position: static;
+        transition: all 3s ease-out;
+    }
+}
+
+.footer {
+    padding-top: 2rem;
+    background-color: #F8F8F8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("/assets/Img/background-img.png");
+}
+
+.footer__sections {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.footer__sections__left {
+    padding: 1rem;
+}
+
+.footer__sections__left__title {
+    display: flex;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.footer__sections__left__title h2 {
+    width: 5rem;
+    height: 5rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: #BEAD8E;
+    color: #FFF;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 3.2rem;
+}
+
+.footer__sections__left__title h3 {
+    font-size: 2rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    color: #111;
+    padding-left: 2rem;
+}
+
+.footer__sections__left__text {
+    font-family: "Archivo", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: #777;
+    margin-bottom: 2rem;
+}
+
+.footer__sections__left__media {
+    display: flex;
+    align-items: center;
+}
+
+.footer__sections__left__media a {
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.footer__sections__left__media a:hover {
+    background-color: #BEAD8E;
+}
+
+.footer__sections__left__media a:hover path {
+    fill: #FFF;
+}
+
+.footer__sections__right {
+    padding: 1rem;
+}
+
+.footer__sections__right h2 {
+    padding-bottom: 1rem;
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.footer__sections__right__item {
+    display: flex;
+    padding: 1rem 1rem 1rem 0;
+}
+
+.footer__sections__right__item__number {
+    padding-left: 1.5rem;
+}
+
+.footer__sections__right__item__number h3 {
+    color: #222;
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+}
+
+.footer__sections__right__item__number h4 {
+    color: #777;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.footer__sections__center {
+    padding: 1rem;
+}
+
+.footer__sections__center h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: #222;
+}
+
+.footer__sections__center__columns {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__sections__center li {
+    list-style: none;
+    font-family: "Roboto", sans-serif;
+    color: #777;
+    font-size: 1rem;
+    line-height: 3rem;
+    font-weight: 400;
+}
+
+.footer__bottom {
+    background-color: #FFF;
+    margin: 0 auto;
+    width: 100%;
+    padding: 1rem 1.5rem;
+}
+
+.footer__bottom p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: #222;
+    padding: 0.5rem;
+}
+
+.footer .section-footer {
+    max-width: 1170px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1000px) {
+    .footer__sections {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    .footer__center,
+    .footer__left,
+    .footer__right {
+        padding: 2rem;
+    }
+
+    .footer .section-footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.bannerSection {
+    background-color: #333;
+    padding: 3rem 1rem;
+}
+
+.bannerSection p {
+    color: #fff;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    letter-spacing: 0.175rem;
+    padding-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+.bannerSection h2 {
+    color: #fff;
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 3.75rem;
+    letter-spacing: -0.075rem;
+    margin-bottom: 2rem;
+}
+
+.bannerSection__buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.bannerSection__buttons button {
+    padding: 1rem 2rem;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 0.951875rem;
+    letter-spacing: 0.175rem;
+    max-width: 13.5rem;
+    margin-bottom: 1rem;
+}
+
+.bannerSection__buttons--tour {
+    background-color: #BEAD8E;
+}
+
+.bannerSection__buttons--tour:hover {
+    background-color: transparent;
+    border: 1px solid #BEAD8E;
+}
+
+.bannerSection__buttons--learn {
+    background-color: transparent;
+    border: 1px solid #BEAD8E;
+}
+
+.bannerSection__buttons--learn:hover {
+    background-color: #BEAD8E;
+}
+
+.section {
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1000px) {
+    .bannerSection {
+        padding-top: 8rem;
+    }
+
+    .bannerSection p {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .bannerSection h2 {
+        font-size: 8rem;
+        line-height: 9rem;
+    }
+
+    .bannerSection__buttons {
+        flex-direction: row;
+    }
+
+    .bannerSection__buttons button {
+        margin-right: 1rem;
+    }
+}
+
+.calendarSection {
+    width: 100%;
+    background-color: #222;
+    padding: 2rem;
+}
+
+.calendarSection__form {
+    margin: 0 auto;
+    max-width: 73.125rem;
+}
+
+.calendarSection__form__date {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.calendarSection__form__date label {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.171875rem;
+    border-bottom: 0.0625rem solid #BEAD8E;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendarSection__form__date input {
+    background-color: transparent;
+    margin-top: 0.5rem;
+    border: none;
+    color: #BEAD8E;
+    padding: 0.5rem;
+}
+
+.calendarSection__form__date input[type=date]::-webkit-calendar-picker-indicator {
+    filter: brightness(0) saturate(100%) invert(74%) sepia(5%) saturate(2587%) brightness(87%) contrast(90%);
+}
+
+.calendarSection__form__button {
+    padding: 1.5rem;
+    background-color: #BEAD8E;
+    max-width: 20.625rem;
+    border: none;
+    font-size: 0.875rem;
+    line-height: 0.951875rem;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    color: #fff;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+    filter: brightness(0) saturate(100%) invert(74%) sepia(5%) saturate(2587%) brightness(87%) contrast(90%);
+}
+
+@media screen and (min-width: 1000px) {
+    .calendarSection__form {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .calendarSection__form__date {
+        max-width: 20.625rem;
+        width: 100%;
+    }
+}
+
+.aboutUsSection {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 4rem 1rem;
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+.aboutUsSection__left {
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutUsSection__left__strong {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.aboutUsSection__left__strong__left {
+    width: 20rem;
+    height: 22rem;
+    text-align: center;
+    padding: 2.5rem;
+    box-shadow: 0px 8px 16px 0px rgba(34, 34, 34, 0.0196078431);
+}
+
+.aboutUsSection__left__strong__left .strong-imgFront {
+    transform: translate(5rem, -2.5rem);
+}
+
+.aboutUsSection__left__strong__left__text {
+    transform: translateY(-3rem);
+}
+
+.aboutUsSection__left__strong__left__text h3 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2rem;
+    letter-spacing: -0.08rem;
+    color: #111;
+    margin: 2rem 0;
+}
+
+.aboutUsSection__left__strong__left__text p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+
+.aboutUsSection__left__strong__img {
+    width: 20rem;
+    height: 22rem;
+}
+
+.aboutUsSection__left__luxury {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.aboutUsSection__left__luxury__img {
+    width: 20rem;
+    height: 22rem;
+}
+
+.aboutUsSection__left__luxury__right {
+    text-align: center;
+    width: 20rem;
+    height: 22rem;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutUsSection__left__luxury__right img {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 0.5rem;
+}
+
+.aboutUsSection__left__luxury__right h3 {
+    color: #fff;
+    font-size: 2rem;
+    font-family: "Old Standard TT", sans-serif;
+    line-height: 2rem;
+    letter-spacing: -0.08rem;
+    font-weight: 400;
+    margin: 0.5rem;
+}
+
+.aboutUsSection__left__luxury__right p {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0.5rem;
+}
+
+.aboutUsSection__right h5 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.175rem;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    color: #777;
+    margin-bottom: 2rem;
+}
+
+.aboutUsSection__right h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 3.75rem;
+    letter-spacing: -0.075rem;
+    color: #111;
+    margin-bottom: 2rem;
+}
+
+.aboutUsSection__right p {
+    font-size: 0.875rem;
+    font-family: "Archivo", sans-serif;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: #777;
+    margin-bottom: 2rem;
+}
+
+.aboutUsSection__right button {
+    padding: 1rem 3rem;
+    color: #fff;
+    background-color: #BDAC8D;
+    border: none;
+    margin-bottom: 2rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 0.951875rem;
+    letter-spacing: 0.175rem;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1000px) {
+    .aboutUsSection {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .aboutUsSection__left {
+        flex: 1 1 0;
+        margin-right: 2rem;
+    }
+
+    .aboutUsSection__left__strong {
+        flex-direction: row;
+    }
+
+    .aboutUsSection__left__strong__left {
+        width: 16rem;
+        height: 18rem;
+        padding: 1rem;
+    }
+
+    .aboutUsSection__left__strong__img {
+        width: 16rem;
+        height: 18rem;
+    }
+
+    .aboutUsSection__left__luxury {
+        flex-direction: row;
+    }
+
+    .aboutUsSection__left__luxury__right {
+        width: 16rem;
+        height: 18rem;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .aboutUsSection__left__luxury__img {
+        width: 16rem;
+        height: 18rem;
+        padding-bottom: 1rem;
+        padding-right: 1rem;
+    }
+
+    .aboutUsSection__right {
+        flex: 1 1 0;
+    }
+
+    .aboutUsSection__right h5 {
+        font-size: 1rem;
+    }
+
+    .aboutUsSection__right h2 {
+        font-size: 5rem;
+        line-height: 5.8rem;
+    }
+}
+
+.introSection {
+    background: #222;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.introSection__container {
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+.introSection__container__left h5 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+    letter-spacing: 0.16rem;
+    color: #BDAC8D;
+    margin-bottom: 2rem;
+}
+
+.introSection__container__left h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 3.8rem;
+    letter-spacing: -0.08rem;
+    color: #fff;
+}
+
+.introSection__container__left p {
+    margin-top: 1rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 1.6rem;
+    color: #C2C2C2;
+}
+
+.introSection__container__right {
+    padding-top: 4rem;
+}
+
+.introSection__container__right iframe {
+    width: 100%;
+    height: 35vh;
+    border-radius: 0.2rem;
+}
+
+.introSection__button {
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+.introSection__button button {
+    margin-top: 1rem;
+    color: #fff;
+    background-color: #BDAC8D;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    line-height: 1.1rem;
+    letter-spacing: 0.175rem;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1000px) {
+    .introSection {
+        background: linear-gradient(to right, #222 0%, #222 75%, #AD9D82 75%, #AD9D82 100%);
+        padding: 5rem 10rem;
+    }
+
+    .introSection__container {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .introSection__container__left {
+        flex: 1 1 0;
+    }
+
+    .introSection__container__left h2 {
+        font-size: 5rem;
+        line-height: 5.3rem;
+    }
+
+    .introSection__container__left p {
+        font-size: 1rem;
+    }
+
+    .introSection__container__right {
+        flex: 1 1 0;
+    }
+
+    .introSection__container__right iframe {
+        width: 35rem;
+        height: 25rem;
+    }
+}
+
+.featuresSection {
+    max-width: 73.125rem;
+    margin-bottom: 4rem;
+}
+
+.featuresSection__title {
+    text-align: center;
+}
+
+.featuresSection__title h5 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 0.951875rem;
+    letter-spacing: 0.175rem;
+    color: #777;
+    margin-bottom: 2rem;
+}
+
+.featuresSection__title h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 3.75rem;
+    letter-spacing: -0.075rem;
+    color: #222;
+}
+
+.featuresSection__swiper {
+    margin-bottom: 2rem;
+    margin: 0 auto;
+}
+
+.featuresSection__swiper .swiper-wrapper {
+    height: auto;
+}
+
+.featuresSection__swiper__item {
+    padding: 2rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    margin: 4rem 0;
+}
+
+.featuresSection__swiper__item__title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.featuresSection__swiper__item__title img:hover {
+    transform: scale(1.02);
+}
+
+.featuresSection__swiper__item__title h2 {
+    font-size: 7.5rem;
+    font-weight: 700;
+    font-family: "Archivo", sans-serif;
+    color: rgba(34, 34, 34, 0.0392156863);
+    transform: translate(25%, -35%);
+}
+
+.featuresSection__swiper__item h4 {
+    font-family: "Old Standard TT", sans-serif;
+    font-size: 2rem;
+    line-height: 2rem;
+    letter-spacing: -0.07rem;
+    color: #222;
+    font-weight: 400;
+}
+
+.featuresSection__swiper__item p {
+    margin-top: 1rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: #777;
+}
+
+.featuresSection__swiper__item img:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (min-width: 1000px) {
+    .featuresSection {
+        margin: 3rem auto;
+    }
+}
+
+.foodSection {
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.foodSection__donut {
+    text-align: right;
+}
+
+.foodSection__donut img {
+    transform: translateX(2rem);
+}
+
+.foodSection__body {
+    max-width: 73.125rem;
+    padding: 1rem;
+}
+
+.foodSection__body h5 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    line-height: 1.1rem;
+    color: #777;
+}
+
+.foodSection__body h2 {
+    margin: 1rem 0;
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 6rem;
+    letter-spacing: -0.16rem;
+    color: #222;
+}
+
+.foodSection__body__swiper .swiper-wrapper {
+    transform: none !important;
+}
+
+.foodSection__body__swiper .swiper-slide {
+    display: flex;
+    padding: 0;
+}
+
+.foodSection__body__swiper__item {
+    display: flex;
+    align-items: center;
+    color: #222;
+    cursor: pointer;
+    padding: 0;
+}
+
+.foodSection__body__swiper__item img {
+    width: 7.5rem;
+    height: 7.5rem;
+}
+
+.foodSection__body__swiper__item__text {
+    padding: 1rem;
+}
+
+.foodSection__body__swiper__item__text h4 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.08rem;
+    padding: 0.5rem;
+}
+
+.foodSection__body__swiper__item__text p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 0.5rem;
+}
+
+.foodSection__body__swiper__item__arrow {
+    display: none;
+    opacity: 0;
+    padding: 1rem;
+}
+
+.foodSection__body .buttons-menu {
+    width: 6rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    margin-left: 65%;
+}
+
+.foodSection__body .buttons-menu .swiper-button-disabled {
+    background-color: #F8F8F8;
+}
+
+.foodSection__body .buttons-menu__prev,
+.foodSection__body .buttons-menu__next {
+    background-color: #BDAC8D;
+    padding: 1.2rem;
+    font-size: 0.08rem;
+    cursor: pointer;
+}
+
+.foodSection__body .buttons-menu__prev svg path,
+.foodSection__body .buttons-menu__next svg path {
+    fill: #111;
+}
+
+.foodSection__body .buttons-menu__prev svg,
+.foodSection__body .buttons-menu__next svg {
+    transform: scale(2);
+}
+
+@media screen and (min-width: 1000px) {
+    .foodSection__donut {
+        text-align: left;
+        max-width: 1170px;
+        margin: 0 auto 2rem auto;
+    }
+
+    .foodSection__donut img {
+        transform: translateX(-15rem);
+    }
+
+    .foodSection__body {
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .foodSection__body__swiper__item__arrow {
+        display: block;
+    }
+
+    .foodSection__body__swiper__item__text:hover {
+        background-color: #111;
+        color: #fff;
+    }
+
+    .foodSection__body__swiper__item:hover>.foodSection__body__swiper__item__arrow {
+        opacity: 1;
+    }
+
+    .foodSection__body .buttons-menu {
+        margin-top: 0;
+        position: absolute;
+        top: 10%;
+        right: 10%;
+    }
+
+    .foodSection__body .buttons-menu .swiper-button-lock {
+        display: block;
+    }
+}
+
+.infoSection {
+    background-color: #222;
+    padding: 2rem 4rem;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    max-width: 73.125rem;
+}
+
+.infoSection__item {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    padding: 2rem;
+}
+
+.infoSection__item img {
+    width: 6rem;
+    height: 6rem;
+}
+
+.infoSection__item h3 {
+    color: #fff;
+    font-size: 4rem;
+    line-height: 5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.infoSection__item h3 span {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.infoSection__item p {
+    color: #999;
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .infoSection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+.roomSection {
+    padding: 2rem 0.5rem;
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+.roomSection h5 {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    color: #777;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.roomSection h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 3.8rem;
+    letter-spacing: -0.08rem;
+    text-align: center;
+    color: #222;
+    margin-bottom: 2rem;
+}
+
+.roomSection__swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.roomSection__swiper__icons {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    transform: translateY(1.5rem);
+    background-color: #fff;
+    z-index: 2;
+}
+
+.roomSection__swiper__text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+    z-index: 2;
+    transform: translateY(-2rem);
+    background-color: #fff;
+}
+
+.roomSection__swiper__text__description h4 {
+    font-family: "Old Standard TT", sans-serif;
+    font-size: 1.6rem;
+    line-height: 2.25rem;
+    letter-spacing: -0.08rem;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.roomSection__swiper__text__description p {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    color: #777;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.roomSection__swiper__text h3 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 3.8rem;
+    text-align: center;
+    color: #BEAD8E;
+}
+
+.roomSection__swiper__text h3 span {
+    font-size: 0.8rem;
+}
+
+.roomSection__swiper .swiper-slide {
+    padding: 1rem;
+}
+
+.roomSection__swiper .swiper-slide img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 40vh;
+}
+
+.roomSection__swiper .swiper-button-prev,
+.roomSection__swiper .swiper-button-next {
+    color: #fff;
+    background-color: #BDAC8D;
+    width: 3rem;
+    height: 3rem;
+    border: 0.1rem solid #fff;
+}
+
+.roomSection__swiper .swiper-button-prev::after,
+.roomSection__swiper .swiper-button-next::after {
+    font-size: 1rem;
+}
+
+.roomSection__swiper .swiper-button-prev {
+    transform: translate(1rem, -15rem);
+}
+
+.roomSection__swiper .swiper-button-next {
+    transform: translate(-1rem, -15rem);
+}
+
+.roomSection__swiper .swiper-button-disabled {
+    color: #111;
+    background-color: #fff;
+}
+
+@media screen and (min-width: 1000px) {
+    .roomSection__swiper__icons {
+        max-width: 24rem;
+    }
+
+    .roomSection__swiper__icons svg {
+        transform: scale(1.6);
+    }
+
+    .roomSection__swiper__text {
+        flex-direction: row;
+        transform: translateY(-3rem);
+        text-align: left;
+    }
+
+    .roomSection__swiper__text__description {
+        padding: 1rem;
+    }
+
+    .roomSection__swiper__text__description h4 {
+        font-size: 2.4rem;
+        line-height: 2.4rem;
+    }
+
+    .roomSection__swiper__text__description p {
+        font-size: 0.8rem;
+        padding-left: 0;
+    }
+
+    .roomSection__swiper__text h3 {
+        font-size: 3.5rem;
+    }
+
+    .roomSection__swiper__text h3 span {
+        font-size: 1rem;
+    }
+
+    .roomSection__swiper .swiper-button-prev {
+        transform: translate(1rem, -10rem);
+    }
+
+    .roomSection__swiper .swiper-button-next {
+        transform: translate(-1rem, -10rem);
+    }
+
+    .roomSection__swiper .swiper-slide img {
+        height: 50vh;
+    }
+}
+
+.imagesSection {
+    max-width: 73.125rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.imagesSection__swiper .swiper-wrapper {
+    margin: 4rem 0;
+    height: auto;
+}
+
+.imagesSection__swiper__item {
+    text-align: center;
+}
+
+.imagesSection__swiper__item img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+}
+
+@media screen and (min-width: 1000px) {
+    .imagesSection {
+        padding: 0;
+    }
+
+    .imagesSection__swiper__item img {
+        height: 30vh;
+    }
+}
+
+.AboutBanner {
+    background-color: #333;
+    padding-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.AboutBanner__text {
+    color: #fff;
+    padding: 2rem;
+}
+
+.AboutBanner__text p {
+    font-size: 0.8125rem;
+    font-family: "Archivo", sans-serif;
+    line-height: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.175rem;
+}
+
+.AboutBanner__text h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 3.75rem;
+    letter-spacing: -0.08rem;
+    margin: 1.5rem 0;
+}
+
+.AboutBanner__links {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    width: 10rem;
+    padding: 1rem;
+    margin-right: 2rem;
+    margin-left: auto;
+    border: none;
+}
+
+.AboutBanner__links a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    color: #222;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.1rem;
+    letter-spacing: -0.04rem;
+}
+
+.AboutBanner__links .AboutSelected {
+    color: #BEAD8E;
+}
+
+.AboutBanner__links .AboutHome {
+    border-right: 0.05rem solid #222;
+}
+
+.section {
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1000px) {
+    .AboutBanner {
+        padding-top: 8rem;
+    }
+
+    .AboutBanner__text {
+        margin: 0;
+        padding: 0;
+    }
+
+    .AboutBanner__text p {
+        font-size: 0.875rem;
+        line-height: 0.951875rem;
+        letter-spacing: 0.175rem;
+    }
+
+    .AboutBanner__text h2 {
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+    }
+}
+
+.AboutVideo {
+    max-width: 73.125rem;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+
+.AboutVideo iframe {
+    width: 100%;
+    height: 40vh;
+    margin-bottom: 2rem;
+}
+
+.AboutVideo h3 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    letter-spacing: -0.1rem;
+    color: #222;
+}
+
+@media screen and (min-width: 1000px) {
+    .AboutVideo {
+        padding: 0;
+    }
+
+    .AboutVideo iframe {
+        height: 50vh;
+    }
+
+    .AboutVideo h3 {
+        padding-top: 4rem;
+        font-size: 4.5rem;
+        line-height: 5.5rem;
+    }
+}
+
+.AboutAmmenities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 73.125rem;
+}
+
+.AboutAmmenities .bbq {
+    display: none;
+}
+
+.AboutAmmenities__item {
+    text-align: center;
+    padding: 2rem;
+    cursor: pointer;
+}
+
+.AboutAmmenities__item svg {
+    transform: scale(1.2);
+}
+
+.AboutAmmenities__item p {
+    color: #222;
+    font-family: "Archivo", sans-serif;
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+    letter-spacing: 0.15rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.AboutAmmenities__item:hover {
+    background-color: #BEAD8E;
+    color: #fff;
+}
+
+.AboutAmmenities__item:hover svg {
+    fill: #fff;
+}
+
+.AboutAmmenities__item:hover svg path {
+    fill: #fff;
+}
+
+@media screen and (min-width: 1000px) {
+    .AboutAmmenities {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .AboutAmmenities__item {
+        padding: 3rem;
+    }
+
+    .AboutAmmenities .bbq {
+        display: block;
+    }
+}
+
+.AboutRestaurant {
+    max-width: 73.125rem;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+}
+
+.AboutRestaurant__img img {
+    width: 100%;
+    height: auto;
+}
+
+.AboutRestaurant__text {
+    margin-top: 2rem;
+}
+
+.AboutRestaurant__text h5 {
+    margin-bottom: 1rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    color: #777;
+    letter-spacing: 0.175rem;
+    font-size: 0.8rem;
+    line-height: 1rem;
+}
+
+.AboutRestaurant__text h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    letter-spacing: -0.08rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.AboutRestaurant__text p {
+    font-family: "Archivo", sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.AboutRestaurant__text button {
+    background-color: #BEAD8E;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+}
+
+@media screen and (min-width: 1000px) {
+    .AboutRestaurant {
+        padding: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .AboutRestaurant__img {
+        flex: 1 1 0;
+    }
+
+    .AboutRestaurant__text {
+        flex: 1 1 0;
+    }
+}
+
+.AboutFacilities {
+    padding: 2rem;
+    background-color: #222;
+    margin-bottom: 4rem;
+}
+
+.AboutFacilities__title {
+    text-align: center;
+}
+
+.AboutFacilities__title h5 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 0.857rem;
+    line-height: 0.951875rem;
+    letter-spacing: 0.175rem;
+    color: #C2C2C2;
+    margin-bottom: 2rem;
+}
+
+.AboutFacilities__title h2 {
+    margin-bottom: 2rem;
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 3.75rem;
+    letter-spacing: -0.075rem;
+    color: #fff;
+}
+
+.AboutFacilities__swiper {
+    max-width: 73.125rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.AboutFacilities__swiper .swiper-pagination-bullet {
+    background: #D8D8D8;
+}
+
+.AboutFacilities__swiper .swiper-wrapper {
+    height: auto;
+}
+
+.AboutFacilities__swiper__item {
+    padding: 2rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    margin: 4rem 0;
+    background-color: #292929;
+}
+
+.AboutFacilities__swiper__item__title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.AboutFacilities__swiper__item__title h2 {
+    font-size: 7.5rem;
+    font-weight: 700;
+    font-family: "Archivo", sans-serif;
+    color: #222222;
+    transform: translateY(-35%);
+}
+
+.AboutFacilities__swiper__item h4 {
+    font-family: "Old Standard TT", sans-serif;
+    font-size: 2rem;
+    line-height: 2rem;
+    letter-spacing: -0.07rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+.AboutFacilities__swiper__item p {
+    margin-top: 1rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: #fff;
+}
+
+.AboutFacilities__swiper__item:hover {
+    transform: scale(1.02);
+    box-shadow: 0.1rem 0.1rem 0.3rem rgba(177, 175, 175, 0.7019607843);
+}
+
+@media screen and (min-width: 580px) {
+    .AboutFacilities__swiper {
+        width: 70%;
+    }
+}
+
+.AboutCounter {
+    max-width: 73.125rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-bottom: 4rem;
+}
+
+.AboutCounter__title {
+    margin-top: 2rem;
+}
+
+.AboutCounter__title h5 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1rem;
+    letter-spacing: 0.175rem;
+    color: #777;
+    margin-bottom: 2rem;
+}
+
+.AboutCounter__title h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 3.8rem;
+    letter-spacing: -0.08rem;
+    color: #222;
+    margin-bottom: 2rem;
+}
+
+.AboutCounter__items {
+    margin-bottom: 2rem;
+}
+
+.AboutCounter__items__item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+}
+
+.AboutCounter__items__item__text h3 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.8rem;
+    line-height: 3.8rem;
+    letter-spacing: -0.12rem;
+}
+
+.AboutCounter__items__item__text p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.AboutCounter__swiper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.AboutCounter__swiper .swiper-wrapper {
+    height: auto;
+}
+
+.AboutCounter__swiper__item {
+    width: 100%;
+}
+
+.AboutCounter__swiper__item img {
+    width: 100%;
+    height: auto;
+}
+
+.AboutCounter__swiper .swiper-pagination-bullet {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.AboutCounter__swiper .swiper-pagination-bullet-active {
+    background: #73c0da;
+}
+
+@media screen and (min-width: 1000px) {
+    .AboutCounter {
+        padding: 0;
+    }
+
+    .AboutCounter__items {
+        display: flex;
+        gap: 3rem;
+        justify-content: space-between;
+    }
+}
+
+.RoomsBanner {
+    background-color: #333;
+    padding-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.RoomsBanner__text {
+    color: #fff;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.RoomsBanner__text p {
+    font-size: 0.8125rem;
+    font-family: "Archivo", sans-serif;
+    line-height: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.175rem;
+}
+
+.RoomsBanner__text h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 3.75rem;
+    letter-spacing: -0.075rem;
+    margin: 1.5rem 0;
+}
+
+.RoomsBanner__links {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    width: 16rem;
+    padding: 1rem 0.5rem;
+    margin-right: 2rem;
+    margin-left: auto;
+    border: none;
+    text-align: center;
+}
+
+.RoomsBanner__links a {
+    flex: 1 1 0;
+    text-decoration: none;
+    color: #222;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.1rem;
+    letter-spacing: -0.04rem;
+}
+
+.RoomsBanner__links .RoomsSelected {
+    color: #BEAD8E;
+}
+
+.RoomsBanner__links .RoomsHome {
+    border-right: 0.05rem solid #222;
+}
+
+.section {
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1000px) {
+    .RoomsBanner {
+        padding-top: 8rem;
+    }
+
+    .RoomsBanner__text {
+        margin: 0;
+        padding: 0;
+    }
+
+    .RoomsBanner__text p {
+        font-size: 0.875rem;
+        line-height: 0.951875rem;
+        letter-spacing: 0.175rem;
+    }
+
+    .RoomsBanner__text h2 {
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+    }
+}
+
+.RoomsGridSection {
+    padding: 1rem;
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+.RoomsGridSection .swiper {
+    position: relative;
+}
+
+.RoomsGridSection__swiper .swiper-wrapper {
+    margin-bottom: 8rem;
+    height: auto;
+}
+
+.RoomsGridSection__swiper .swiper-pagination-bullet {
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1rem;
+    color: #000;
+    opacity: 1;
+    background: transparent;
+    border-radius: 0;
+}
+
+.RoomsGridSection__swiper .swiper-pagination-bullet-active {
+    color: #fff;
+    background: #BEAD8E;
+}
+
+.RoomsGridSection__swiper .swiper-button-next,
+.RoomsGridSection__swiper .swiper-button-prev {
+    position: absolute;
+    bottom: 0.25%;
+    top: auto;
+    margin-top: 2rem;
+    height: auto;
+}
+
+.RoomsGridSection__swiper .swiper-button-next:after,
+.RoomsGridSection__swiper .swiper-button-prev:after {
+    color: #000;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.RoomsGridSection__swiper .swiper-slide {
+    margin-bottom: 2rem;
+}
+
+.RoomsGridSection__swiper .swiper-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.RoomsGridSection__swiper__icons {
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    transform: translateY(-2rem);
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 0 0.5rem 1rem 0 rgba(138, 138, 138, 0.0509803922);
+}
+
+.RoomsGridSection__swiper__icons svg {
+    transform: scale(1.2);
+}
+
+.RoomsGridSection__swiper__text {
+    text-align: center;
+}
+
+.RoomsGridSection__swiper__text h3 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.02rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.RoomsGridSection__swiper__text p {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: #777;
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+}
+
+.RoomsGridSection__swiper__text__price {
+    display: flex;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.RoomsGridSection__swiper__text__price h4 {
+    color: #BEAD8E;
+    padding-right: 1rem;
+}
+
+.RoomsGridSection__swiper__text__price h5 {
+    padding-left: 1rem;
+    font-size: 1rem;
+    line-height: 1.1rem;
+}
+
+.RoomsGridSection__swiper__text__price h5 a {
+    text-decoration: none;
+    color: #BDBDBD;
+}
+
+@media screen and (min-width: 1600px) {
+    .RoomsGridSection__swiper__icons svg {
+        transform: scale(1.6);
+    }
+
+    .RoomsGridSection__swiper .swiper-button-next {
+        right: 35%;
+        bottom: 0.75%;
+    }
+
+    .RoomsGridSection__swiper .swiper-button-prev {
+        left: 35%;
+        bottom: 0.75%;
+    }
+
+    .RoomsGridSection__swiper__text__price h5:hover {
+        transform: scale(1.2);
+    }
+}
+
+.OffersBanner {
+    background-color: #333;
+    padding-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.OffersBanner__text {
+    color: #fff;
+    margin: 2rem;
+}
+
+.OffersBanner__text p {
+    font-size: 0.8125rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.175rem;
+    line-height: 1.125rem;
+}
+
+.OffersBanner__text h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 3.75rem;
+    letter-spacing: -0.075rem;
+    margin: 1.5rem 0;
+}
+
+.OffersBanner__links {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    width: 10rem;
+    padding: 1rem 0;
+    margin-right: 2rem;
+    margin-left: auto;
+    border: none;
+}
+
+.OffersBanner__links a {
+    text-decoration: none;
+    padding: 0 1rem;
+    color: #222;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.088125rem;
+    letter-spacing: -0.03rem;
+}
+
+.OffersBanner__links .OffersSelected {
+    color: #BEAD8E;
+}
+
+.OffersBanner__links .OffersHome {
+    border-right: 0.05rem solid #222;
+}
+
+.section {
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1000px) {
+    .OffersBanner {
+        padding-top: 8rem;
+    }
+
+    .OffersBanner__text {
+        margin: 0;
+        padding: 0;
+    }
+
+    .OffersBanner__text p {
+        font-size: 0.875rem;
+        line-height: 0.951875rem;
+        letter-spacing: 0.175rem;
+    }
+
+    .OffersBanner__text h2 {
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+    }
+}
+
+.OffersList {
+    margin: 2rem auto;
+    max-width: 73.125rem;
+    padding: 2rem 0.8rem;
+}
+
+.OffersList__item {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.OffersList__item img {
+    width: 100%;
+    height: auto;
+}
+
+.OffersList__item__container {
+    padding: 0.5rem;
+}
+
+.OffersList__item__container__description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.OffersList__item__container__description__title {
+    padding-top: 0.5rem;
+}
+
+.OffersList__item__container__description__title h4 {
+    font-family: " Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 0.9rem;
+    letter-spacing: 0.175rem;
+    color: #777;
+    padding-bottom: 0.5rem;
+}
+
+.OffersList__item__container__description__title h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    letter-spacing: -0.09rem;
+    color: #222;
+    padding-bottom: 1rem;
+}
+
+.OffersList__item__container__description__price {
+    font-family: "Archivo", sans-serif;
+    text-align: right;
+    font-weight: 700;
+    transform: translateY(-6rem);
+    z-index: 2;
+}
+
+.OffersList__item__container__description__price h5 {
+    font-size: 1.4375rem;
+    line-height: 1.56375rem;
+    color: #BEAD8E;
+    text-decoration: line-through;
+    display: flex;
+    align-items: baseline;
+}
+
+.OffersList__item__container__description__price h5 p {
+    font-size: 0.6875rem;
+    line-height: 0.748125rem;
+}
+
+.OffersList__item__container__description__price h4 {
+    font-size: 1.875rem;
+    line-height: 2.04rem;
+    color: #DE5777;
+    display: flex;
+    align-items: baseline;
+}
+
+.OffersList__item__container__description__price h4 p {
+    font-size: 0.75rem;
+    line-height: 0.81625rem;
+}
+
+.OffersList__item__container__info {
+    margin-bottom: 2rem;
+}
+
+.OffersList__item__container__info p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: #777;
+    margin-top: 1rem;
+}
+
+.OffersList__item__container__info__features {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.OffersList__item__container__info__features__item {
+    display: flex;
+    align-items: center;
+}
+
+.OffersList__item__container__info__features__item h6 {
+    margin-left: 1rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    line-height: 1.09875rem;
+    color: #777;
+}
+
+.OffersList__item__container__btn button {
+    padding: 1.5rem 3rem;
+    background-color: #BDAC8D;
+    color: #fff;
+    font-family: "Archivo", sans-serif;
+    font-size: 0.875rem;
+    line-height: 0.951875rem;
+    letter-spacing: 0.2rem;
+    border: none;
+}
+
+@media screen and (min-width: 1000px) {
+    .OffersList {
+        padding: 0;
+    }
+
+    .OffersList__item__container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 3rem;
+        transform: translateY(-4rem);
+        background-color: #fff;
+        border-top: 0.375rem solid #BDAC8D;
+    }
+
+    .OffersList__item__container__description {
+        border-bottom: 0.15rem solid #ECECEC;
+        padding-bottom: 2rem;
+    }
+
+    .OffersList__item__container__description__title h2 {
+        padding-top: 1rem;
+        font-size: 3rem;
+    }
+
+    .OffersList__item__container__description__price {
+        transform: translateY(0);
+    }
+
+    .OffersList__item__container__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .OffersList__item__container__info p {
+        flex: 1 1 0;
+        margin-right: 2rem;
+        font-size: 1rem;
+    }
+
+    .OffersList__item__container__info__features {
+        flex: 1 1 0;
+    }
+}
+
+.OffersPopular {
+    padding: 2rem 1rem;
+    margin-bottom: 4rem;
+}
+
+.OffersPopular__title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.OffersPopular__title h5 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 0.951875rem;
+    color: #BDAC8D;
+    letter-spacing: 0.175rem;
+    margin-bottom: 1rem;
+}
+
+.OffersPopular__title h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    letter-spacing: -0.05rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.OffersPopular__slider {
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+.OffersPopular__slider .swiper-wrapper {
+    margin-bottom: 4rem;
+    height: auto;
+}
+
+.OffersPopular__slider .swiper-button-prev,
+.OffersPopular__slider .swiper-button-next {
+    color: #fff;
+    background-color: #BDAC8D;
+    height: 2rem;
+    width: 2rem;
+    transform: translateY(-8rem);
+    z-index: 2;
+}
+
+.OffersPopular__slider .swiper-button-prev::after,
+.OffersPopular__slider .swiper-button-next::after {
+    font-size: 0.8rem;
+}
+
+.OffersPopular__slider .swiper-slide {
+    background-color: #fff;
+    height: auto;
+}
+
+.OffersPopular__slider .swiper-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.OffersPopular__slider__icons {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    transform: translateY(-2rem);
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 0 0.5rem 1rem 0 rgba(138, 138, 138, 0.0509803922);
+}
+
+.OffersPopular__slider__text {
+    text-align: center;
+}
+
+.OffersPopular__slider__text h3 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.045rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.OffersPopular__slider__text p {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: #777;
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+}
+
+.OffersPopular__slider__text__price {
+    display: flex;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.088125rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.OffersPopular__slider__text__price h4 {
+    color: #BEAD8E;
+    padding-right: 1rem;
+}
+
+.OffersPopular__slider__text__price h5 {
+    color: #BDBDBD;
+    padding-left: 1rem;
+}
+
+.OffersPopular__slider__text__price h5 a {
+    text-decoration: none;
+    color: #BDBDBD;
+    padding-left: 1rem;
+}
+
+.popularDark {
+    background-color: #222;
+}
+
+@media screen and (min-width: 1000px) {
+    .OffersPopular__slider {
+        width: 100%;
+    }
+
+    .OffersPopular__slider__icons {
+        padding: 1.2rem;
+    }
+
+    .OffersPopular__slider__icons svg {
+        transform: scale(1.2);
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .OffersPopular__slider {
+        width: 80%;
+    }
+
+    .OffersPopular__slider__icons svg {
+        transform: scale(1.6);
+    }
+}
+
+.RoomsBanner {
+    background-color: #333;
+    padding-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.RoomsBanner__text {
+    color: #fff;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.RoomsBanner__text p {
+    font-size: 0.8125rem;
+    font-family: "Archivo", sans-serif;
+    line-height: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.175rem;
+}
+
+.RoomsBanner__text h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 3.75rem;
+    letter-spacing: -0.075rem;
+    margin: 1.5rem 0;
+}
+
+.RoomsBanner__links {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    width: 16rem;
+    padding: 1rem 0.5rem;
+    margin-right: 2rem;
+    margin-left: auto;
+    border: none;
+    text-align: center;
+}
+
+.RoomsBanner__links a {
+    flex: 1 1 0;
+    text-decoration: none;
+    color: #222;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.1rem;
+    letter-spacing: -0.04rem;
+}
+
+.RoomsBanner__links .RoomsSelected {
+    color: #BEAD8E;
+}
+
+.RoomsBanner__links .RoomsHome {
+    border-right: 0.05rem solid #222;
+}
+
+.section {
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1000px) {
+    .RoomsBanner {
+        padding-top: 8rem;
+    }
+
+    .RoomsBanner__text {
+        margin: 0;
+        padding: 0;
+    }
+
+    .RoomsBanner__text p {
+        font-size: 0.875rem;
+        line-height: 0.951875rem;
+        letter-spacing: 0.175rem;
+    }
+
+    .RoomsBanner__text h2 {
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+    }
+}
+
+.RoomSection {
+    padding: 1rem;
+}
+
+.RoomSection .roomInfo {
+    margin-bottom: 2rem;
+}
+
+.RoomSection .roomInfo__info__text__title h5 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+    letter-spacing: 0.18rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.RoomSection .roomInfo__info__text__title h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    letter-spacing: -0.09rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.RoomSection .roomInfo__info__text h3 {
+    display: inline-block;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.6875rem;
+    color: #BEAD8E;
+    margin-bottom: 1rem;
+}
+
+.RoomSection .roomInfo__info__text h3 p {
+    display: inline-block;
+    font-size: 0.8125rem;
+}
+
+.RoomSection .roomInfo__info img {
+    width: 100%;
+    height: auto;
+}
+
+.RoomSection .roomInfo__form {
+    padding: 2rem;
+}
+
+.RoomSection .roomInfo__form h4 {
+    text-align: center;
+    font-family: "Archivo", sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.22375rem;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: -0.03375rem;
+    margin-bottom: 2rem;
+}
+
+.RoomSection .roomInfo__form__item {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.RoomSection .roomInfo__form__item label {
+    margin-bottom: 1rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 0.951875rem;
+    color: #222;
+}
+
+.RoomSection .roomInfo__form__item input {
+    background-color: #F8F8F8;
+    padding: 1rem;
+    border: none;
+}
+
+.RoomSection .roomInfo__form__button {
+    background-color: #BEAD8E;
+    color: #fff;
+    font-family: "Archivo", sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 0.951875rem;
+    letter-spacing: 0.175rem;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.RoomSection__description {
+    margin-bottom: 2rem;
+}
+
+.RoomSection__description p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: #777;
+}
+
+.RoomSection__amenities h4 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 1.875rem;
+    line-height: 1.875rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.0625rem solid #F1F1F1;
+    margin-bottom: 2rem;
+}
+
+.RoomSection__amenities__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.RoomSection__amenities__grid__item {
+    display: flex;
+}
+
+.RoomSection__amenities__grid__item p {
+    padding-left: 0.5rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.09875;
+    font-weight: 500;
+    color: #777;
+}
+
+@media screen and (min-width: 1000px) {
+    .RoomSection {
+        max-width: 73.125rem;
+        margin: 0 auto;
+    }
+
+    .RoomSection .roomInfo {
+        display: flex;
+    }
+
+    .RoomSection .roomInfo__info {
+        max-width: 48.125rem;
+    }
+
+    .RoomSection .roomInfo__info__text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 2rem;
+        background-color: #fff;
+        transform: translateY(4rem);
+        padding: 1rem 2rem;
+    }
+
+    .RoomSection .roomInfo__info__text h2 {
+        font-size: 3rem;
+    }
+
+    .RoomSection .roomInfo__info h3 {
+        font-size: 2.5rem;
+    }
+
+    .RoomSection .roomInfo__info h3 p {
+        font-size: 1rem;
+    }
+
+    .RoomSection__description {
+        max-width: 48.125rem;
+        margin-bottom: 2rem;
+    }
+
+    .RoomSection__description p {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .RoomSection__amenities {
+        max-width: 48.125rem;
+        margin-bottom: 2rem;
+        padding: 2rem;
+    }
+
+    .RoomSection__amenities__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.RoomFounder {
+    max-width: 73.125rem;
+    margin: 2rem auto;
+}
+
+.RoomFounder__container {
+    max-width: 23.125rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.RoomFounder__circle {
+    width: 2.875rem;
+    height: 2.875rem;
+    border-radius: 50%;
+    margin: 0 auto;
+    padding-top: 0.688rem;
+    background-color: #BDAC8D;
+    transform: translate(3.35rem, 3.25rem);
+    border: 0.25rem solid #fff;
+}
+
+.RoomFounder img {
+    width: 9.375rem;
+    height: 9.375rem;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+
+.RoomFounder h2 {
+    margin: 0;
+    font-size: 1.875rem;
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.RoomFounder h3 {
+    font-family: "Archivo", sans-serif;
+    color: #BDAC8D;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 0.951875rem;
+    letter-spacing: 0.175rem;
+    margin-bottom: 1rem;
+}
+
+.RoomFounder p {
+    font-family: "Archivo", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #777;
+}
+
+@media screen and (min-width: 1000px) {
+    .RoomFounder {
+        margin-bottom: 4rem;
+    }
+
+    .RoomFounder__container {
+        box-shadow: 0px 14px 24px 0px rgba(190, 173, 142, 0.2705882353);
+    }
+}
+
+.RoomCancellation {
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+.RoomCancellation__text {
+    padding: 2rem;
+    max-width: 48.125rem;
+}
+
+.RoomCancellation__text h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 1.875rem;
+    line-height: 1.875rem;
+    color: #222;
+    padding-bottom: 1rem;
+    border-bottom: 0.0625rem solid #F1F1F1;
+    margin-bottom: 2rem;
+}
+
+.RoomCancellation__text p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #777;
+}
+
+.OffersPopular {
+    padding: 2rem 1rem;
+    margin-bottom: 4rem;
+}
+
+.OffersPopular__title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.OffersPopular__title h5 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 0.951875rem;
+    color: #BDAC8D;
+    letter-spacing: 0.175rem;
+    margin-bottom: 1rem;
+}
+
+.OffersPopular__title h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    letter-spacing: -0.05rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.OffersPopular__slider {
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+.OffersPopular__slider .swiper-wrapper {
+    margin-bottom: 4rem;
+    height: auto;
+}
+
+.OffersPopular__slider .swiper-button-prev,
+.OffersPopular__slider .swiper-button-next {
+    color: #fff;
+    background-color: #BDAC8D;
+    height: 2rem;
+    width: 2rem;
+    transform: translateY(-8rem);
+    z-index: 2;
+}
+
+.OffersPopular__slider .swiper-button-prev::after,
+.OffersPopular__slider .swiper-button-next::after {
+    font-size: 0.8rem;
+}
+
+.OffersPopular__slider .swiper-slide {
+    background-color: #fff;
+    height: auto;
+}
+
+.OffersPopular__slider .swiper-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.OffersPopular__slider__icons {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    transform: translateY(-2rem);
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 0 0.5rem 1rem 0 rgba(138, 138, 138, 0.0509803922);
+}
+
+.OffersPopular__slider__text {
+    text-align: center;
+}
+
+.OffersPopular__slider__text h3 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.045rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.OffersPopular__slider__text p {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: #777;
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+}
+
+.OffersPopular__slider__text__price {
+    display: flex;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.088125rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.OffersPopular__slider__text__price h4 {
+    color: #BEAD8E;
+    padding-right: 1rem;
+}
+
+.OffersPopular__slider__text__price h5 {
+    color: #BDBDBD;
+    padding-left: 1rem;
+}
+
+.OffersPopular__slider__text__price h5 a {
+    text-decoration: none;
+    color: #BDBDBD;
+    padding-left: 1rem;
+}
+
+.popularDark {
+    background-color: #222;
+}
+
+@media screen and (min-width: 1000px) {
+    .OffersPopular__slider {
+        width: 100%;
+    }
+
+    .OffersPopular__slider__icons {
+        padding: 1.2rem;
+    }
+
+    .OffersPopular__slider__icons svg {
+        transform: scale(1.2);
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .OffersPopular__slider {
+        width: 80%;
+    }
+
+    .OffersPopular__slider__icons svg {
+        transform: scale(1.6);
+    }
+}
+
+.ContactBanner {
+    background-color: #333;
+    padding-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.ContactBanner__text {
+    color: #fff;
+    margin: 2rem;
+}
+
+.ContactBanner__text p {
+    font-size: 0.8125rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.175rem;
+    line-height: 1.125rem;
+}
+
+.ContactBanner__text h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 3.75rem;
+    letter-spacing: -0.075rem;
+    margin: 1.5rem 0;
+}
+
+.ContactBanner__links {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    width: 10rem;
+    padding: 1rem 0;
+    margin-right: 2rem;
+    margin-left: auto;
+    border: none;
+}
+
+.ContactBanner__links a {
+    text-decoration: none;
+    padding: 0 1rem;
+    color: #222;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.088125rem;
+    letter-spacing: -0.03rem;
+}
+
+.ContactBanner__links .ContactSelected {
+    color: #BEAD8E;
+}
+
+.ContactBanner__links .ContactHome {
+    border-right: 0.05rem solid #222;
+}
+
+.section {
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1000px) {
+    .ContactBanner {
+        padding-top: 8rem;
+    }
+
+    .ContactBanner__text {
+        margin: 0;
+        padding: 0;
+    }
+
+    .ContactBanner__text p {
+        font-size: 0.875rem;
+        line-height: 0.951875rem;
+        letter-spacing: 0.175rem;
+    }
+
+    .ContactBanner__text h2 {
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+    }
+}
+
+.ContactForm {
+    max-width: 73.125rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.ContactForm form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ContactForm__input {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.ContactForm__input input {
+    border: none;
+    width: 100%;
+    background-color: #F8F8F8;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.171875rem;
+}
+
+.ContactForm__input svg {
+    position: absolute;
+    transform: translate(160%, 130%);
+}
+
+.ContactForm__textarea {
+    width: 100%;
+}
+
+.ContactForm__textarea textarea {
+    border: none;
+    width: 100%;
+    background-color: #F8F8F8;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.171875rem;
+}
+
+.ContactForm__textarea svg {
+    position: absolute;
+    transform: translate(160%, 140%);
+}
+
+.ContactForm__button {
+    margin: 0 auto;
+    width: 18.25rem;
+    font-size: 1rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #fff;
+    background-color: #BEAD8E;
+    margin-top: 1.5rem;
+    line-height: 1.171875rem;
+    padding: 1.5rem 0;
+    border: none;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1000px) {
+    .ContactForm form {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .ContactForm__input {
+        width: 48%;
+    }
+
+    .ContactForm__textarea {
+        margin: 0 1rem;
+    }
+}
+
+.ContactInfo {
+    max-width: 73.125rem;
+    padding: 2rem;
+}
+
+.ContactInfo__item__card {
+    display: flex;
+    position: relative;
+    align-items: center;
+    transform: translateY(7rem);
+    gap: 1rem;
+    z-index: 4;
+}
+
+.ContactInfo__item__card__text h2 {
+    font-family: "Old Standard TT", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.ContactInfo__item__card__text p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.025625rem;
+    color: #777;
+}
+
+.ContactInfo__item__number {
+    font-size: 12.5rem;
+    line-height: 14.64875rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    color: #F8F8F8;
+    text-align: right;
+    z-index: 1;
+}
+
+@media screen and (min-width: 1000px) {
+    .ContactInfo {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .ContactInfo__item {
+        flex: 1 1 0;
+    }
+
+    .ContactInfo__item__card {
+        gap: 3rem;
+    }
+}
+
+.ContactMap {
+    max-width: 73.125rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.ContactMap__map {
+    padding-bottom: 50%;
+    position: relative;
+    width: 100%;
+}
+
+.ContactMap__map iframe {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.RoomsListSection {
+    padding: 1rem;
+    max-width: 73.125rem;
+    margin: 0 auto;
+}
+
+.RoomsListSection__swiper .swiper {
+    position: relative;
+}
+
+.RoomsListSection__swiper .swiper-wrapper {
+    margin-bottom: 4rem;
+}
+
+.RoomsListSection__swiper .swiper-pagination-bullet {
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1rem;
+    color: #000;
+    opacity: 1;
+    background: transparent;
+    border-radius: 0;
+}
+
+.RoomsListSection__swiper .swiper-pagination-bullet-active {
+    color: #fff;
+    background: #BEAD8E;
+}
+
+.RoomsListSection__swiper .swiper-button-next,
+.RoomsListSection__swiper .swiper-button-prev {
+    position: absolute;
+    bottom: 0.25%;
+    top: auto;
+    margin-top: 0;
+    height: auto;
+}
+
+.RoomsListSection__swiper .swiper-button-next:after,
+.RoomsListSection__swiper .swiper-button-prev:after {
+    color: #000;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.RoomsListSection__swiper .swiper-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.RoomsListSection__swiper__center__icons {
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    transform: translateY(-2rem);
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 0 0.5rem 1rem 0 rgba(138, 138, 138, 0.0509803922);
+}
+
+.RoomsListSection__swiper__center__icons svg {
+    transform: scale(1.2);
+}
+
+.RoomsListSection__swiper__center__text {
+    text-align: center;
+}
+
+.RoomsListSection__swiper__center__text h3 {
+    font-family: "Old Standard TT", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.02rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.RoomsListSection__swiper__center__text p {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.RoomsListSection__swiper__price {
+    display: flex;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.RoomsListSection__swiper__price h4 {
+    color: #BEAD8E;
+    padding-right: 1rem;
+    font-size: 1rem;
+    line-height: 1.1rem;
+    display: flex;
+    align-items: baseline;
+}
+
+.RoomsListSection__swiper__price h5 {
+    padding-left: 1rem;
+    font-size: 1rem;
+    line-height: 1.1rem;
+}
+
+.RoomsListSection__swiper__price h5 a {
+    text-decoration: none;
+    color: #BDBDBD;
+}
+
+@media screen and (min-width: 1600px) {
+    .RoomsListSection__swiper .swiper-slide {
+        width: 100%;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .RoomsListSection__swiper .swiper-slide img {
+        flex: 2 1 0;
+        width: 30%;
+        height: auto;
+    }
+
+    .RoomsListSection__swiper .swiper-button-next {
+        right: 40%;
+    }
+
+    .RoomsListSection__swiper .swiper-button-prev {
+        left: 40%;
+    }
+
+    .RoomsListSection__swiper__center {
+        flex: 2 1 0;
+    }
+
+    .RoomsListSection__swiper__center__icons {
+        margin-left: 0;
+        width: 60%;
+        transform: translateY(0);
+        background-color: #fff;
+        margin-bottom: 1rem;
+    }
+
+    .RoomsListSection__swiper__center__icons svg {
+        transform: scale(1.6);
+    }
+
+    .RoomsListSection__swiper__center__text {
+        text-align: left;
+    }
+
+    .RoomsListSection__swiper__center__text h3 {
+        font-family: "Old Standard TT", sans-serif;
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        letter-spacing: -0.045rem;
+        color: #222;
+        margin-bottom: 1rem;
+    }
+
+    .RoomsListSection__swiper__center__text p {
+        font-family: "Roboto", sans-serif;
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        font-weight: 400;
+        color: #777;
+        margin-bottom: 1rem;
+    }
+
+    .RoomsListSection__swiper__price {
+        flex: 1 1 0;
+        display: block;
+    }
+
+    .RoomsListSection__swiper__price h4 {
+        font-size: 2.5rem;
+        line-height: 2.72rem;
+        border-bottom: 0.125rem solid #F1F1F1;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .RoomsListSection__swiper__price h4 p {
+        font-size: 1rem;
+        line-height: 1.088125rem;
+    }
+
+    .RoomsListSection__swiper__price h5 {
+        font-size: 1rem;
+        line-height: 1.088125rem;
+        cursor: pointer;
+    }
+
+    .RoomsListSection__swiper__price h5:hover {
+        transform: scale(1.2);
+    }
+}
