@@ -12,7 +12,7 @@ CREATE TABLE `amenity` (
 
 
 LOCK TABLES `amenity` WRITE;
-INSERT INTO `amenity` VALUES (1,'Breakfast'),(2,'Locker'),(3,'Kitchen'),(4,'24/7 Online Support'),(5,'High Speed Wifi'),(6,'Air Conditioner'),(7,'Shop Near'),(8,'Single Bed'),(9,'Terrace'),(10,'Double Bed'),(11,'Room Service'),(12,'Parking'),(13,'Mini Bar'),(14,'Towels'),(15,'Cleaning'),(16,'Shower'),(17,'Smart Security'),(18,'Expert Team');
+INSERT INTO `amenity` VALUES (1,'Breakfast'),(2,'Locker'),(3,'Kitchen'),(4,'24/7 Online Support'),(5,'High Speed Wifi'),(6,'Air Conditioner'),(7,'Shop Near'),(8,'Single Bed'),(9,'Expert Team'),(10,'Towels'),(11,'Cleaning'),(12,'Shower'),(13,'Smart Security');
 UNLOCK TABLES;
 
 

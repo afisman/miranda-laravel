@@ -42,11 +42,6 @@ function calculateRate($price, $discount) {
         'Expert Team' => asset('./assets/icon/expertTeam.svg'),
         'Towels' => asset('./assets/icon/towels.svg'),
         'Locker' => asset('./assets/icon/locker.svg'),
-        'Terrace' => asset('./assets/icon/grocery.svg'),
-        'Double Bed' => asset('./assets/icon/bed.svg'),
-        'Room Service' => asset('./assets/icon/kitchen.svg'),
-        'Parking' => asset('./assets/icon/shop.svg'),  
-        'Mini Bar' => asset('./assets/icon/grocery.svg'),  
     ];
 
     return $amenities[$amenity['name']];
