@@ -48,6 +48,16 @@ class Room extends Model
         return $formattedRooms;
     }
 
+    public static function checkAvailability($bookings, $checkIn, $checkOut) {
+        $availableRooms = [];
+        foreach($bookings as $booking) {
+            if((json_decode($booking['check_in']) < $checkIn && json_decode($booking['check_out']) <= $checkIn) ||  (json_decode($booking['check_in']) >= $checkOut) && !in_array(json_decode($booking['room']), $availableRooms)) {
+                $availableRooms[] =  json_decode($booking['room']);     
+            }
+        }
+        return $availableRooms;           
+    }
+
     public function photos() : HasMany {
         return $this->hasMany(Photo::class, 'room_id');
     }
@@ -66,5 +76,17 @@ class Room extends Model
         $rooms = self::with(['photos', 'amenities'])->where('offer', 'YES')->get();
         $data = self::formatRoom($rooms);
         return $data;
+    }
+
+    public static function availableRooms($checkIn, $checkOut) {
+        $bookings = Booking::get();
+        $data = self::checkAvailability($bookings, $checkIn, $checkOut);
+        $roomData = [];
+        foreach($data as $id) {
+            $roomData[] = self::with(['photos', 'amenities'])->find($id);
+        }
+        $formattedData = self::formatRoom($roomData);
+        
+        return $formattedData;
     }
 }

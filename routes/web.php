@@ -15,3 +15,5 @@ Route::get('/rooms', [RoomsController::class, 'rooms'])->name('rooms');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
+Route::get('/roomsList', [RoomsController::class, 'roomsList'])->name('roomsList');
+

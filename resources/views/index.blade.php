@@ -12,7 +12,7 @@
             </div>
         </section>
         <section class="calendarSection">
-            <form action="roomsList.php" class="calendarSection__form" method="GET">
+            <form action="{{route('roomsList')}}" class="calendarSection__form" method="GET">
                 <div class="calendarSection__form__date">
                     <label for="arrival">Arrival Date
                         <input type="date" id="arrival" name="arrival" 
