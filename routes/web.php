@@ -1,15 +1,17 @@
 <?php
 
 use App\Http\Controllers\RoomsController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
-// require_once __DIR__ . '/../helpers/helpers.php';
 
 
 Route::get('/', [RoomsController::class, 'index'])->name('index');
 
 Route::view('/about', 'about')->name('about');
 
-Route::get('offers', [RoomsController::class, 'offers'])->name('offers');
+Route::get('/offers', [RoomsController::class, 'offers'])->name('offers');
 
-Route::get('rooms', [RoomsController::class, 'rooms'])->name('rooms');
+Route::get('/rooms', [RoomsController::class, 'rooms'])->name('rooms');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
