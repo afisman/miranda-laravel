@@ -19,4 +19,9 @@ class RoomsController extends Controller
         $offerRooms = Room::offers();
         return view('offers', ['rooms' => $offerRooms]);
     }
+
+     public function rooms() {
+        $rooms = Room::rooms();
+        return view('rooms', ['rooms' => $rooms]);
+    }
 }

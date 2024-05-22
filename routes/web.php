@@ -11,3 +11,5 @@ Route::view('/about', 'about')->name('about');
 
 Route::get('offers', [RoomsController::class, 'offers'])->name('offers');
 
+Route::get('rooms', [RoomsController::class, 'rooms'])->name('rooms');
+

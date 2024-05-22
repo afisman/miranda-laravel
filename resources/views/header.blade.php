@@ -12,8 +12,8 @@
 
                 <navbar id="nav_links" class="navbar__center">
                     <a href="{{route('about')}}" class="navbar__center__link">About Us</a>
-                    <a href="./rooms.php" class="navbar__center__link">Rooms</a>
-                    <a href="./offers.php" class="navbar__center__link">Offers</a>
+                    <a href="{{route('rooms')}}" class="navbar__center__link">Rooms</a>
+                    <a href="{{route('offers')}}" class="navbar__center__link">Offers</a>
                     <a href="./contact.php" class="navbar__center__link">Contact</a>
                 </navbar>
 
