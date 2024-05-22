@@ -72,7 +72,7 @@
                         <div class="roomSection__swiper__icons">
                            @foreach($room['amenities'] as $amenity)
                             <span class="roomSection__menu-item">
-                                <img src="{{ getAmenity($amenity) }}" alt="">
+                                <img src="{{ $amenity->getAmenity() }}" alt="">
                             </span>
                            @endforeach
                         </div>

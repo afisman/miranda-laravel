@@ -23,6 +23,31 @@ class Room extends Model
   'discount',
   'status' ];
 
+  public static function calculateRate($price, $discount) {
+        $priceInCents = $price -($price*$discount/100);
+        return round($priceInCents/100);
+  }
+
+  public static function formatRoom($data) {
+        $formattedRooms = [];
+        foreach ($data as $unformattedRoom) {
+            $formattedRooms[] =[
+            'id' => $unformattedRoom['id'],
+            'description' => $unformattedRoom['description'],
+            'type' => $unformattedRoom['room_type'],
+            'name' => $unformattedRoom['room_number'],
+            'offer' => $unformattedRoom['offer'],
+            'rate' => $unformattedRoom['rate'],
+            'price' => self::calculateRate($unformattedRoom['rate'], $unformattedRoom['discount']),
+            'amenities' => $unformattedRoom['amenities'],
+            'photos' => $unformattedRoom['photos'][1]['url']
+            ];
+            echo  $unformattedRoom['photos'][0]['url'];
+        }
+
+        return $formattedRooms;
+    }
+
     public function photos() : HasMany {
         return $this->hasMany(Photo::class, 'room_id');
     }
@@ -31,7 +56,15 @@ class Room extends Model
         return $this ->belongsToMany(Amenity::class, 'room_amenity', );
     }
 
-    public static function swiper() {
-        return self::with(['photos', 'amenities'])->get();
+    public static function rooms() {
+        $rooms = self::with(['photos', 'amenities'])->get();
+        $data = self::formatRoom($rooms);
+        return $data;
+    }
+
+    public static function offers() {
+        $rooms = self::with(['photos', 'amenities'])->where('offer', 'YES')->get();
+        $data = self::formatRoom($rooms);
+        return $data;
     }
 }

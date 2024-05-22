@@ -15,10 +15,10 @@ function formatRoom($unformattedRoom) {
 }
 
 function populateArray($data, $arrayToPopulate) {
-   foreach ($data as $roomToFormat) {
+    foreach ($data as $roomToFormat) {
         $arrayToPopulate[] = formatRoom($roomToFormat);
     }
-return $arrayToPopulate;
+    return $arrayToPopulate;
 }
 
 function calculateRate($price, $discount) {
@@ -26,7 +26,7 @@ function calculateRate($price, $discount) {
         return round($priceInCents/100);
     }
 
-    function getAmenity($amenity) {
+function getAmenity($amenity) {
         $amenities = [
         'Air Conditioner' => asset('./assets/icon/airco.svg'),
         'Breakfast' => asset('./assets/icon/breakfast.svg'),
