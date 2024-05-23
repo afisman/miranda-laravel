@@ -34,7 +34,7 @@
                             <p>{{$room['description']}}</p>
                             <div class="RoomsGridSection__swiper__text__price">
                                 <h4>${{$room['price']}}/Night</h4>
-                                <h5><a href="./roomDetails.php?id={{$room['id']}}">Book Now</a></h5>
+                                <h5><a href="{{route('roomDetails', ['room' => $room['id']])}}">Book Now</a></h5>
                             </div>
                         </div>
                     </div>

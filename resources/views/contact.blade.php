@@ -93,6 +93,7 @@
         </section>
         <section class="ContactForm">
             <form  method="POST">
+                @csrf
                 <div class="ContactForm__input">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
                         width="14" height="14" x="0" y="0" viewBox="0 0 512 512"

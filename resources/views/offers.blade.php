@@ -237,7 +237,7 @@
                         </div>
 
                     </div>
-                    <a class="OffersList__item__container__btn" href="./roomDetails.php?id={{$room['id']}}">
+                    <a class="OffersList__item__container__btn" href="{{route('roomDetails', ['room' => $room['id']])}}">
                         <button>BOOK NOW</button>
                     </a>
                 </div>
@@ -266,7 +266,9 @@
                             <p>{{$room['description']}}</p>
                             <div class="OffersPopular__slider__text__price">
                                 <h4>{{$room['price']}}/Night</h4>
-                                <h5>Booking Now</h5>
+                                <a class="OffersPopular__slider__text__book" href="{{route('roomDetails', ['room' => $room['id']])}}">
+                                    <h5>Book Now</h5>
+                                </a>
                             </div>
                         </div>
                     </div>

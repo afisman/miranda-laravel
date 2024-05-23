@@ -28,10 +28,8 @@ class Room extends Model
         return round($priceInCents/100);
   }
 
-  public static function formatRoom($data) {
-        $formattedRooms = [];
-        foreach ($data as $unformattedRoom) {
-            $formattedRooms[] =[
+  public static function formatRoom($unformattedRoom) {
+    return [
             'id' => $unformattedRoom['id'],
             'description' => $unformattedRoom['description'],
             'type' => $unformattedRoom['room_type'],
@@ -42,51 +40,49 @@ class Room extends Model
             'amenities' => $unformattedRoom['amenities'],
             'photos' => $unformattedRoom['photos'][1]['url']
             ];
-            echo  $unformattedRoom['photos'][0]['url'];
+  }
+
+  public static function formatRooms($data) {
+        $formattedRooms = [];
+        foreach ($data as $unformattedRoom) {
+            $formattedRooms[] =self::formatRoom($unformattedRoom);
         }
 
         return $formattedRooms;
     }
 
-    public static function checkAvailability($bookings, $checkIn, $checkOut) {
-        $availableRooms = [];
-        foreach($bookings as $booking) {
-            if((json_decode($booking['check_in']) < $checkIn && json_decode($booking['check_out']) <= $checkIn) ||  (json_decode($booking['check_in']) >= $checkOut) && !in_array(json_decode($booking['room']), $availableRooms)) {
-                $availableRooms[] =  json_decode($booking['room']);     
-            }
-        }
-        return $availableRooms;           
-    }
-
+    
     public function photos() : HasMany {
         return $this->hasMany(Photo::class, 'room_id');
     }
-
+    
     public function amenities() : BelongsToMany {
         return $this ->belongsToMany(Amenity::class, 'room_amenity', );
     }
-
+    
+    public function bookings() : HasMany {
+        return $this->hasMany(Booking::class, 'room');
+    }
+  
     public static function rooms() {
         $rooms = self::with(['photos', 'amenities'])->get();
-        $data = self::formatRoom($rooms);
+        $data = self::formatRooms($rooms);
         return $data;
     }
 
     public static function offers() {
         $rooms = self::with(['photos', 'amenities'])->where('offer', 'YES')->get();
-        $data = self::formatRoom($rooms);
+        $data = self::formatRooms($rooms);
         return $data;
     }
 
-    public static function availableRooms($checkIn, $checkOut) {
-        $bookings = Booking::get();
-        $data = self::checkAvailability($bookings, $checkIn, $checkOut);
-        $roomData = [];
-        foreach($data as $id) {
-            $roomData[] = self::with(['photos', 'amenities'])->find($id);
-        }
-        $formattedData = self::formatRoom($roomData);
-        
-        return $formattedData;
-    }
+    public static function checkAvailability( $checkIn, $checkOut) {
+       
+       $rooms = self::with(['photos', 'amenities'])->whereHas('bookings', function($query) use($checkIn, $checkOut) {
+               $query->where('check_in', '<', $checkIn)->where('check_out','<=' , $checkIn )
+             ->orWhere('check_in', '>=', $checkOut)->where('check_out', '>' , $checkOut);   
+        })->get();
+         $formattedData = self::formatRooms($rooms);
+         return $formattedData;           
+     }
 }

@@ -26,9 +26,15 @@ class RoomsController extends Controller
     }
 
     public function roomsList() {
-        $checkIn = isset($_GET['check_in']) ? $GET['check_in'] : null;
-        $checkOut = isset($_GET['check_out']) ? $GET['check_out'] : null;
-        $rooms = Room::availableRooms($checkIn, $checkOut);
+        $checkIn = isset($_GET['arrival']) ? $_GET['arrival'] : null;
+        $checkOut = isset($_GET['departure']) ? $_GET['departure'] : null;
+        $rooms = Room::checkAvailability($checkIn, $checkOut);
         return view('roomsList', ['rooms' => $rooms]);
+    }
+
+    public function roomDetails(Room $room) {
+        $formattedRoom = Room::formatRoom($room);
+        $rooms = Room::rooms();
+        return view('roomDetails', ['room' => $formattedRoom, 'rooms' => $rooms]);
     }
 }

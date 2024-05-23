@@ -1173,6 +1173,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
     height: auto;
 }
 
+.roomSection__menu-item {
+    display: flex;
+}
+
+.roomSection__menu-item p {
+    margin-left: 1rem;
+}
+
 .roomSection__menu-item:not(:last-child) {
     margin-right: 1em;
 }

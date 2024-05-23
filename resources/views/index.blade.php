@@ -82,7 +82,7 @@
                                 <h4>{{$room['type']}}</h4>
                                 <p>{{$room['description']}}</p>
                             </div>
-                            <h3>{{$room['price']}}<span>/Night</span></h3>
+                            <h3>${{$room['price']}}<span>/Night</span></h3>
                         </div>
                     </div>
                     @endforeach

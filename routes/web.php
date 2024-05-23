@@ -15,5 +15,10 @@ Route::get('/rooms', [RoomsController::class, 'rooms'])->name('rooms');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
+Route::post('/contact', [ContactController::class, 'store'])->name('contact');
+
 Route::get('/roomsList', [RoomsController::class, 'roomsList'])->name('roomsList');
+
+Route::get('/roomDetails/{room}', [RoomsController::class, 'roomDetails'])->name('roomDetails');
+
 

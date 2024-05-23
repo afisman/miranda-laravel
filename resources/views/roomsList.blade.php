@@ -38,7 +38,7 @@
                         <div class="RoomsListSection__swiper__price">
                             <h4>${{$room['price']}}<p>/Night</p>
                             </h4>
-                            <h5><a href="./roomDetails.php?id={{$room['id']}}">Book Now</a></h5>
+                            <h5><a href="{{route('roomDetails', ['room' => $room['id']])}}">Book Now</a></h5>
                         </div>
                     </div>
                     @endforeach
