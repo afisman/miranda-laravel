@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\RoomsController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\BookingController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,5 +22,8 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact');
 Route::get('/roomsList', [RoomsController::class, 'roomsList'])->name('roomsList');
 
 Route::get('/roomDetails/{room}', [RoomsController::class, 'roomDetails'])->name('roomDetails');
+
+Route::post('/bookingForm', [BookingController::class, 'store'])->name('bookingForm');
+
 
 

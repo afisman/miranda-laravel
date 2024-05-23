@@ -76,6 +76,12 @@ class Room extends Model
         return $data;
     }
 
+    // public static function isAvailable($room, $checkIn, $checkOut) {
+    //     echo $isAvailable;
+
+    //     return $isAvailable;
+    // }
+
     public static function checkAvailability( $checkIn, $checkOut) {
        
        $rooms = self::with(['photos', 'amenities'])->whereHas('bookings', function($query) use($checkIn, $checkOut) {

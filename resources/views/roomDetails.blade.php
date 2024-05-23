@@ -29,7 +29,8 @@
                     </div>
                     <img src={{$room['photos']}} alt="">
                 </div>
-                <form class="roomInfo__form" method="POST" >
+                <form class="roomInfo__form" method="POST" action={{route('bookingForm')}}>
+                    @csrf
                     <h4>Check Availability</h4>
                     <div class="roomInfo__form__item">
                         <label for="arrival">Check In</label>
@@ -55,6 +56,7 @@
                         <label for="phone">Special request</label>
                         <input type="text" id="special_request" name="special_request" placeholder="Enter special request">
                     </div>
+                    <input type="number" hidden value={{$room['id']}} name="id">
                     <input type="submit" class="roomInfo__form__button" name="" id=""
                         value="CHECK AVAILABILITY">
                 </form>

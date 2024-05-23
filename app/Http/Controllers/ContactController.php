@@ -19,9 +19,6 @@ class ContactController extends Controller
         $contact->subject = request("subject");
         $contact->message = request("message");
         
-
-        echo date("Y/m/d");
-
         $contact-> save();
 
         return redirect('/contact')->with('contact', true);
