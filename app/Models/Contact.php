@@ -20,4 +20,6 @@ class Contact extends Model
     'rating',
     'is_read'
 ];
+
+    public $timestamps = false;
 }
