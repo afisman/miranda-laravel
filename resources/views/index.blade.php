@@ -76,13 +76,13 @@
                             </span>
                            @endforeach
                         </div>
-                        <img src={{$room['photos']}} alt="Room 1" class="roomSection__swiper__img">
+                        <img src={{$room->photos[0]->url}} alt="Room 1" class="roomSection__swiper__img">
                         <div class="roomSection__swiper__text">
                             <div class="roomSection__swiper__text__description">
                                 <h4>{{$room['type']}}</h4>
-                                <p>{{$room['description']}}</p>
+                                <p>{{$room->description}}</p>
                             </div>
-                            <h3>${{$room['price']}}<span>/Night</span></h3>
+                            <h3>${{$room->calculateRate()}}<span>/Night</span></h3>
                         </div>
                     </div>
                     @endforeach

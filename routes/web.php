@@ -28,7 +28,7 @@ Route::get('/roomDetails/{room}', [RoomsController::class, 'roomDetails'])->name
 Route::post('/bookingForm', [BookingController::class, 'store'])->name('bookingForm');
 
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 

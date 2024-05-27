@@ -23,8 +23,8 @@ class Room extends Model
   'discount',
   'status' ];
 
-  public static function calculateRate($price, $discount) {
-        $priceInCents = $price -($price*$discount/100);
+  public function calculateRate() {
+        $priceInCents = $this->rate -($this->rate*$this->discount/100);
         return round($priceInCents/100);
   }
 
