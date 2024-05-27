@@ -14,22 +14,23 @@ class BookingController extends Controller
     }
 
     public function store(Request $request) {
-        $booking = new Booking();
-        $booking->name = request("name");
-        $booking->order_date = date("Y-m-d H:i:s");
-        $booking->check_in = date("Y-m-d",substr(strtotime(request("arrival")), 0, 10));
-        $booking->check_out = date("Y-m-d",substr(strtotime(request("departure")), 0, 10));
-        $booking->hour_check_in = "12:00";
-        $booking->hour_check_out = "11:00";
-        $booking->hour_check_in = "12:00";
-        $booking->discount = 0;
-        $booking->special_request = request("special_request");
-        $booking->status = "Check In";
-        $booking->room =request('id');
 
-        $booking-> save();
+        $request->validate([
+            'check_in' => 'required|date|after:date',
+            'check_out' => 'required|date|after_check_in',
+            'name' => 'required|string|max:255',
+            'special_request' => 'required|max:255',
+            'room' => 'required|integer'
+        ]);
 
-        return redirect('/rooms')->with('message', true);
+        if(Room::isAvailable($request->room, $request->check_in, $request->check_out) !== null) {
+            session()->flash('error', 1);
+            return view('roomDetails', ['room' => Room::room($request->room), 'rooms' => Room::rooms()]);
+        }
+        Booking::create($request->all());
+        session()->flash('success', 1);
+        session()->flash('booking', 1);
+        return view('roomDetails', ['room' => Room::room($request->room), 'rooms' => Room::rooms()]);
         
     }
 }

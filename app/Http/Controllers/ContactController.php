@@ -11,16 +11,19 @@ class ContactController extends Controller
         return view('contact');
     }
 
-    public function store() {
-        $contact = new Contact();
-        $contact->full_name = request("name");
-        $contact->email = request("email");
-        $contact->phone = request("phone");
-        $contact->subject = request("subject");
-        $contact->message = request("message");
-        
-        $contact-> save();
+    public function store(Request $request) {
 
-        return redirect('/contact')->with('contact', true);
+        $request->validate([
+            'full_name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'subject' => 'required',
+            'message' => 'required'
+        ]);
+
+        Contact::create($request->all());
+        session()->flash('success', 1);
+        session()->flash('message', 1);
+        return view('contact');
     }
 }

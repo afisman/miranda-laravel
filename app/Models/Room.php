@@ -28,28 +28,28 @@ class Room extends Model
         return round($priceInCents/100);
   }
 
-  public static function formatRoom($unformattedRoom) {
-    return [
-            'id' => $unformattedRoom['id'],
-            'description' => $unformattedRoom['description'],
-            'type' => $unformattedRoom['room_type'],
-            'name' => $unformattedRoom['room_number'],
-            'offer' => $unformattedRoom['offer'],
-            'rate' => $unformattedRoom['rate'],
-            'price' => self::calculateRate($unformattedRoom['rate'], $unformattedRoom['discount']),
-            'amenities' => $unformattedRoom['amenities'],
-            'photos' => $unformattedRoom['photos'][1]['url']
-            ];
-  }
+//   public static function formatRoom($unformattedRoom) {
+//     return [
+//             'id' => $unformattedRoom['id'],
+//             'description' => $unformattedRoom['description'],
+//             'type' => $unformattedRoom['room_type'],
+//             'name' => $unformattedRoom['room_number'],
+//             'offer' => $unformattedRoom['offer'],
+//             'rate' => $unformattedRoom['rate'],
+//             'price' => self::calculateRate($unformattedRoom['rate'], $unformattedRoom['discount']),
+//             'amenities' => $unformattedRoom['amenities'],
+//             'photos' => $unformattedRoom['photos'][1]['url']
+//             ];
+//   }
 
-  public static function formatRooms($data) {
-        $formattedRooms = [];
-        foreach ($data as $unformattedRoom) {
-            $formattedRooms[] =self::formatRoom($unformattedRoom);
-        }
+//   public static function formatRooms($data) {
+//         $formattedRooms = [];
+//         foreach ($data as $unformattedRoom) {
+//             $formattedRooms[] =self::formatRoom($unformattedRoom);
+//         }
 
-        return $formattedRooms;
-    }
+//         return $formattedRooms;
+//     }
 
     
     public function photos() : HasMany {
@@ -63,32 +63,40 @@ class Room extends Model
     public function bookings() : HasMany {
         return $this->hasMany(Booking::class, 'room');
     }
+
+    public static function room($id) {
+        return Room::with(['amenities', 'photoss'])->find($id);
+    }
   
     public static function rooms() {
         $rooms = self::with(['photos', 'amenities'])->get();
-        $data = self::formatRooms($rooms);
-        return $data;
+        return $rooms;
     }
 
     public static function offers() {
         $rooms = self::with(['photos', 'amenities'])->where('offer', 'YES')->get();
-        $data = self::formatRooms($rooms);
-        return $data;
+        return $rooms;
     }
 
-    // public static function isAvailable($room, $checkIn, $checkOut) {
-    //     echo $isAvailable;
-
-    //     return $isAvailable;
-    // }
+    public static function isAvailable($roomId, $checkIn, $checkOut) {
+          $room =  self::with(['photos', 'amenities'])->whereHas('bookings', function ($query) use ($checkIn, $checkOut) {
+            $query->where('check_in', '<', $checkOut)->where('check_out', '>', $checkIn)
+                ->orWhere('check_in', '=<', $checkIn)->where('check_out', '<', $checkOut)
+                ->orWhere('check_in', '>=', $checkIn)->where('check_in', '<', $checkOut)
+                ->orWhere('check_out', '>', $checkIn)->where('check_out', '=<', $checkOut);
+        })->find($roomId);
+        return $room;
+    }
 
     public static function checkAvailability( $checkIn, $checkOut) {
        
-       $rooms = self::with(['photos', 'amenities'])->whereHas('bookings', function($query) use($checkIn, $checkOut) {
-               $query->where('check_in', '<', $checkIn)->where('check_out','<=' , $checkIn )
-             ->orWhere('check_in', '>=', $checkOut)->where('check_out', '>' , $checkOut);   
+         $rooms = self::with(['photos', 'amenities'])->whereDoesntHave('bookings', function ($query) use ($checkIn, $check_out) {
+            $query->where('check_in', '<', $checkOut)->where('check_out', '>', $checkIn)
+                ->orWhere('check_in', '=<', $checkIn)->where('check_out', '<', $checkOut)
+                ->orWhere('check_in', '>=', $checkIn)->where('check_in', '<', $checkOut)
+                ->orWhere('check_out', '>', $checkIn)->where('check_out', '=<', $checkOut);
         })->get();
-         $formattedData = self::formatRooms($rooms);
-         return $formattedData;           
+
+        return $rooms;
      }
 }
