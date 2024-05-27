@@ -21,7 +21,7 @@
                 <div class="swiper-wrapper">
                     @foreach($rooms as $room)
                     <div class="swiper-slide">
-                        <img src={{$room['photos']}} alt="Luxury room">
+                        <img src={{$room->photos[0]->url}} alt="Luxury room">
                         <div class="RoomsGridSection__swiper__icons">
                             @foreach($room['amenities'] as $amenity)
                             <span class="roomSection__menu-item">
@@ -30,11 +30,11 @@
                             @endforeach
                         </div>
                         <div class="RoomsGridSection__swiper__text">
-                            <h3>{{$room['type']}}</h3>
-                            <p>{{$room['description']}}</p>
+                            <h3>{{$room->type}}</h3>
+                            <p>{{$room->description}}</p>
                             <div class="RoomsGridSection__swiper__text__price">
-                                <h4>${{$room['price']}}/Night</h4>
-                                <h5><a href="{{route('roomDetails', ['room' => $room['id']])}}">Book Now</a></h5>
+                                <h4>${{$room->calculateRate()}}/Night</h4>
+                                <h5><a href="{{route('roomDetails', ['room' => $room->id])}}">Book Now</a></h5>
                             </div>
                         </div>
                     </div>

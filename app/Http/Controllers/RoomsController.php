@@ -33,8 +33,7 @@ class RoomsController extends Controller
     }
 
     public function roomDetails(Room $room) {
-        $formattedRoom = Room::formatRoom($room);
         $rooms = Room::rooms();
-        return view('roomDetails', ['room' => $formattedRoom, 'rooms' => $rooms]);
+        return view('roomDetails', ['room' => $room, 'rooms' => $rooms]);
     }
 }

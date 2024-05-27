@@ -21,13 +21,13 @@
                 <div class="roomInfo__info">
                     <div class="roomInfo__info__text">
                         <div class="roomInfo__info__text__title">
-                            <h5>{{$room['type']}}</h5>
-                            <h2>{{$room['name']}}</h2>
+                            <h5>{{$room->type}}</h5>
+                            <h2>{{$room->name}}</h2>
                         </div>
-                        <h3>${{$room['price']}}<p>/Night</p>
+                        <h3>${{$room->calculateRate()}}<p>/Night</p>
                         </h3>
                     </div>
-                    <img src={{$room['photos']}} alt="">
+                    <img src={{$room->photos[0]->url}} alt="">
                 </div>
                 <form class="roomInfo__form" method="POST" action={{route('bookingForm')}}>
                     @csrf
@@ -56,13 +56,13 @@
                         <label for="phone">Special request</label>
                         <input type="text" id="special_request" name="special_request" placeholder="Enter special request">
                     </div>
-                    <input type="number" hidden value={{$room['id']}} name="id">
+                    <input type="number" hidden value={{$room->id}} name="id">
                     <input type="submit" class="roomInfo__form__button" name="" id=""
                         value="CHECK AVAILABILITY">
                 </form>
             </div>
             <div class="RoomSection__description">
-                <p>{{$room['description']}}</p>
+                <p>{{$room->description}}</p>
             </div>
             <div class="RoomSection__amenities">
                 <h4>Amenities</h4>
@@ -110,7 +110,7 @@
                 <div class="swiper-wrapper">
                     @foreach($rooms as $offerRoom)
                     <div class="swiper-slide">
-                        <img src={{$offerRoom['photos']}} alt="Luxury room">
+                        <img src={{$offerRoom->photos[0]->url}} alt="Luxury room">
                         <div class="OffersPopular__slider__icons">
                            @foreach($offerRoom['amenities'] as $amenity)
                             <span class="roomSection__menu-item">
@@ -119,10 +119,10 @@
                             @endforeach
                         </div>
                         <div class="OffersPopular__slider__text">
-                            <h3>{{$offerRoom['type']}}</h3>
-                            <p>{{$offerRoom['description']}}</p>
+                            <h3>{{$offerRoom->type}}</h3>
+                            <p>{{$offerRoom->description}}</p>
                             <div class="OffersPopular__slider__text__price">
-                                <h4>${{$offerRoom['price']}}/Night</h4>
+                                <h4>${{$offerRoom->calculateRate()}}/Night</h4>
                                 <h5><a href="{{route('roomDetails', ['room' => $offerRoom['id']])}}">Book Now</a></h5>
                             </div>
                         </div>

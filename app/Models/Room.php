@@ -27,30 +27,6 @@ class Room extends Model
         $priceInCents = $this->rate -($this->rate*$this->discount/100);
         return round($priceInCents/100);
   }
-
-//   public static function formatRoom($unformattedRoom) {
-//     return [
-//             'id' => $unformattedRoom['id'],
-//             'description' => $unformattedRoom['description'],
-//             'type' => $unformattedRoom['room_type'],
-//             'name' => $unformattedRoom['room_number'],
-//             'offer' => $unformattedRoom['offer'],
-//             'rate' => $unformattedRoom['rate'],
-//             'price' => self::calculateRate($unformattedRoom['rate'], $unformattedRoom['discount']),
-//             'amenities' => $unformattedRoom['amenities'],
-//             'photos' => $unformattedRoom['photos'][1]['url']
-//             ];
-//   }
-
-//   public static function formatRooms($data) {
-//         $formattedRooms = [];
-//         foreach ($data as $unformattedRoom) {
-//             $formattedRooms[] =self::formatRoom($unformattedRoom);
-//         }
-
-//         return $formattedRooms;
-//     }
-
     
     public function photos() : HasMany {
         return $this->hasMany(Photo::class, 'room_id');
