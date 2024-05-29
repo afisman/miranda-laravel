@@ -17,16 +17,26 @@ class OrderController extends Controller
         $rooms = Room::rooms();
         $orders = Order::orders();
         $types = ['Food', 'Other'];
-        // print_r($rooms);
         return view('orders', ['orders' => $orders, 'rooms'=>$rooms, 'types' => $types]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $request->validate([
+            'user_id' => 'integer|required',
+            'room_id' => 'integer|required',
+            'type' => 'string|required',
+            'description' => 'string|required'
+        ]);
+
+        Order::create($request->all());
+        $rooms = Room::rooms();
+        $orders = Order::orders();
+        $types = ['Food', 'Other'];
+        return view('orders', ['orders' => $orders, 'rooms'=>$rooms, 'types' => $types]);
     }
 
     /**
