@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\OrderController;
+
 
 
 
@@ -27,14 +29,19 @@ Route::get('/roomDetails/{room}', [RoomsController::class, 'roomDetails'])->name
 
 Route::post('/bookingForm', [BookingController::class, 'store'])->name('bookingForm');
 
+Route::middleware('auth')->group(function () {
 
-Route::get('/welcome', function () {
-    return view('welcome');
+    Route::get('/dashboard', [OrderController::class, 'index'])->name('dashboard');
+    Route::get('/order/{order}', [OrderController::class, 'orderDetails'])->name('orderDetails');
+
+    Route::post('/order', [OrderController::class, 'create'])->name('orderCreate');
+
+    Route::get('/order/edit/{order}', [OrderController::class, 'edit'])->name('orderEdit');
+    Route::patch('/order/edit/{order}', [OrderController::class, 'patch'])->name('orderPatch');
+    
+    Route::delete('/order/{order}', [OrderController::class, 'delete'])->name('orderDelete');
+
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
