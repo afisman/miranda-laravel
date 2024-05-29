@@ -28,17 +28,11 @@ Route::get('/roomDetails/{room}', [RoomsController::class, 'roomDetails'])->name
 Route::post('/bookingForm', [BookingController::class, 'store'])->name('bookingForm');
 
 Route::middleware('auth')->group(function () {
-
     Route::get('/dashboard', [OrderController::class, 'index'])->name('dashboard');
-    Route::get('/order/{order}', [OrderController::class, 'orderDetails'])->name('orderDetails');
-
-    Route::post('/order', [OrderController::class, 'create'])->name('orderCreate');
-
-    Route::get('/order/edit/{order}', [OrderController::class, 'edit'])->name('orderEdit');
-    Route::patch('/order/edit/{order}', [OrderController::class, 'patch'])->name('orderPatch');
     
-    Route::delete('/order/{order}', [OrderController::class, 'delete'])->name('orderDelete');
-
+    Route::post('/order', [OrderController::class, 'store'])->name('orderCreate');
+    Route::patch('/order', [OrderController::class, 'update'])->name('orderUpdate');  
+    Route::delete('/order', [OrderController::class, 'destroy'])->name('orderDelete');
 });
 
 Route::middleware('auth')->group(function () {
