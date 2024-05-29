@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->integer('room_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
-            $table-string('type');
+            $table->string('type');
             $table->string('description');
             $table->timestamps();
             $table->foreign('room_id')->references('id')->on('room');
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Room;
+use App\Models\Order;
+
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -11,7 +14,11 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $rooms = Room::rooms();
+        $orders = Order::orders();
+        $types = ['Food', 'Other'];
+        // print_r($rooms);
+        return view('orders', ['orders' => $orders, 'rooms'=>$rooms, 'types' => $types]);
     }
 
     /**
@@ -33,7 +40,7 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Order $order)
     {
         //
     }
