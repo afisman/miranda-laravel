@@ -37,19 +37,23 @@ class OrderController extends Controller
         return Redirect::route('dashboard');    
     }
 
-  
-
-   
-
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        $order->type = $request->type;
+        echo $request->id;
+        $order = Order::find($request->id);
+        print_r($order);
+        $request->validate([
+            'type' => 'string|required',
+            'description' => 'string|required|max:255'
+        ]);
         $order->description = $request->description;
+        $order->type = $request->type;
         $order->save();
-        return Redirect::route('dashboard');    
+
+        return Redirect::route('dashboard'); 
 
     }
 
@@ -58,11 +62,10 @@ class OrderController extends Controller
      */
     public function destroy(Request $request)
     {
-        print_r($request);
-        $order_data = json_decode($request->order_data);
-        $order = Order::find($order_data->id);
+        $order = Order::find($request->id);
         $order->delete();
-        return Redirect::route('dashboard');    
+
+        return Redirect::route('dashboard'); 
 
     }
 }

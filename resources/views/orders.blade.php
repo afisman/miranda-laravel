@@ -18,7 +18,7 @@
     </section>
     <section class="OrdersList">
         <div class="form-control form-control--flex">
-                <x-primary-button x-data="" x-on:click.prevent="$dispatch('open-modal', 'create-order')">
+                <x-primary-button x-data="" x-on:click.prevent="$dispatch('open-modal', {name: 'create-order', data: {}})">
                     + New Order
                 </x-primary-button>
             </div>
@@ -44,7 +44,11 @@
                             type: '{{$order->type}}',
                             description: '{{$order->description}}'
                         }"
-                            x-on:click.prevent="$dispatch('open-modal', 'edit-order')">
+                            x-on:click.prevent="$dispatch('open-modal',{ name: 'edit-order',  data: {
+                                                id: id, 
+                                                type: type, 
+                                                description: description}
+                                            })">
                                     Edit
                             </x-secondary-button>
                                     
@@ -54,7 +58,11 @@
                             type: '{{$order->type}}',
                             description: '{{$order->description}}'
                         }"
-                            x-on:click.prevent="$dispatch('open-modal', 'confirm-order-deletion')">
+                           x-on:click.prevent="$dispatch('open-modal',{
+                                        name:'confirm-order-deletion', 
+                                        data: {
+                                            id: {{ $order->id }}
+                                        }})">
                                 Delete
                             </x-danger-button>
                                     
@@ -103,16 +111,16 @@
                 </div>
 
                 <div class="form-control form-control--flex">
-                    <x-primary-button>
+                    <x-primary-button type='submit'>
                         {{ __('Create order') }}
                     </x-primary-button>
                 </div>
             </form>
         </x-modal>
         <x-modal name="edit-order" focusable>
-            <form method="patch" class="form form--modal --max-width" action="{{ route('orderUpdate') }}" class="p-6">
+            <form method="post" class="form form--modal --max-width" action="{{ route('orderUpdate') }}" class="p-6">
                 @csrf
-                @method('patch')
+                @method('PATCH')
 
 
                 <h2 class="order__title">
@@ -120,19 +128,10 @@
                 </h2>
                 <x-text-input id="user_id" type="hidden" name="user_id" :value="Auth::id()" />
 
-                <div class="form-control">
-                    <x-input-label for="room" :value="__('Room')" />
-                    <select class="form__select" name="room_id" id="room">
-                        @foreach ($rooms as $room)
-                            <option value="{{ $room->id }}">{{ $room->room_number }}</option>
-                        @endforeach
-                    </select>
-                    <x-input-error :messages="$errors->get('room_id')" />
-                </div>
 
                 <div class="form-control">
                     <x-input-label for="type" :value="__('Type')" />
-                    <select class="form__select" name="type" id="type" value="{{$order->type}}">
+                    <select class="form__select" x-bind:value="data.type" name="type" id="type">
                         @foreach ($types as $type)
                             <option value="{{ $type }}">{{ $type }}</option>
                         @endforeach
@@ -142,21 +141,22 @@
 
                 <div class="order-form-control">
                     <x-input-label for="description" :value="__('Description')" />
-                    <textarea class="form__area" name="description" id="description" cols="30" rows="10">{{ $order->description }}</textarea>
+                    <textarea class="form__area" x-bind:value="data.description" name="description" id="description" cols="30" rows="10">{{ $order->description }}</textarea>
                     <x-input-error :messages="$errors->get('description')" />
                 </div>
 
                 <div class="form-control form-control--flex">
-                    <x-primary-button>
+                    <x-primary-button type='submit'>
                         {{ __('Edit order') }}
                     </x-primary-button>
                 </div>
+                <input type="hidden" name="id" x-bind:value="data.id">
             </form>
         </x-modal>
-        <x-modal name="confirm-order-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
+        <x-modal name="confirm-order-deletion"  focusable>
         <form method="post" action="{{ route('orderDelete', ['order' => $order->id]) }}" class="p-6">
             @csrf
-            @method('delete')
+            @method('DELETE')
 
             <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
                 {{ __('Are you sure you want to delete your order?') }}
@@ -171,10 +171,11 @@
                     {{ __('Cancel') }}
                 </x-secondary-button>
 
-                <x-danger-button class="ms-3">
+                <x-danger-button class="ms-3" type='submit'>
                     {{ __('Delete') }}
                 </x-danger-button>
             </div>
+            <input type="hidden" name="id" x-bind:value="data.id">
         </form>
         </x-modal>
         @endsection
