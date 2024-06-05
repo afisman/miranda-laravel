@@ -1,0 +1,21 @@
+name: Miranda laravel deploy
+on: push
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        port: ${{ secrets.PORT }}
+        key: ${{ secrets.KEY }}
+        script: |
+          cd /var/www/miranda-laravel/
+          git pull origin main
+          php artisan migrate
+          npm run build
+          sudo systemctl restart apache2
