@@ -8,7 +8,6 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\OrderController;
 
-
 Route::get('/', [RoomsController::class, 'index'])->name('index');
 
 Route::view('/about', 'about')->name('about');
