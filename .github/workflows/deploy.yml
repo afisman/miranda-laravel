@@ -16,6 +16,6 @@ jobs:
         script: |
           cd /var/www/miranda-laravel/
           git pull origin main
-          sudo php artisan migrate
+          php artisan migrate
           npm run build
           sudo systemctl restart apache2
