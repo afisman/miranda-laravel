@@ -16,6 +16,6 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-         DB::unprepared(file_get_contents('./seed.sql'));
+        DB::unprepared(file_get_contents('./seed.sql'));
     }
 }
