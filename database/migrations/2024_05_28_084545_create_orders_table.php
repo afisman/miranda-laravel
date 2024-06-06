@@ -11,8 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        if(!Schema::hasTable('orders')){
-
+        Schema::dropIfExists('orders');
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->integer('room_id')->unsigned();
@@ -23,7 +22,7 @@ return new class extends Migration
             $table->foreign('room_id')->references('id')->on('room');
             $table->foreign('user_id')->references('id')->on('users');
         });
-    }
+    
     }
 
     /**
