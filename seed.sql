@@ -127,7 +127,7 @@ UNLOCK TABLES;
 
 
 
-DROP TABLE IF EXISTS `room_amenity`;
+DROP TABLE IF EXISTS `room_amenit
 
 CREATE TABLE `room_amenity` (
   `id` int NOT NULL AUTO_INCREMENT,

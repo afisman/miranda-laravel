@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('room_id')->unsigned();
+            $table->integer('room_id');
             $table->bigInteger('user_id')->unsigned();
             $table->enum('type', ['Food', 'Other']);
             $table->string('description');
