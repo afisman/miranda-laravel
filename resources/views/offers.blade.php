@@ -30,7 +30,7 @@
                         <div class="OffersList__item__container__description__price">
                             <h5>{{$room->calculateRate()}}<p>/Night</p>
                             </h5>
-                            <h4>{{$room['rate']}}<p>/Night</p>
+                            <h4>{{$room['rate']/100}}<p>/Night</p>
                             </h4>
                         </div>
                     </div>
