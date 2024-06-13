@@ -23,8 +23,8 @@
                 <div class="OffersList__item__container">
                     <div class="OffersList__item__container__description">
                         <div class="OffersList__item__container__description__title">
-                            <h4>{{$room['type']}}</h4>
-                            <h2>{{$room['name']}}</h2>
+                            <h4>{{$room['room_type']}}</h4>
+                            <h2>{{$room['room_number']}}</h2>
                         </div>
                         @foreach($room['amenities'] as $amenity)
                             <span class="roomSection__menu-item">
