@@ -21,8 +21,8 @@
                 <div class="roomInfo__info">
                     <div class="roomInfo__info__text">
                         <div class="roomInfo__info__text__title">
-                            <h5>{{$room->type}}</h5>
-                            <h2>{{$room->name}}</h2>
+                            <h5>{{$room['type']}}</h5>
+                            <h2>{{$room['name']}}</h2>
                         </div>
                         <h3>${{$room->calculateRate()}}<p>/Night</p>
                         </h3>
