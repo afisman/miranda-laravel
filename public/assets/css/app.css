@@ -2568,6 +2568,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     letter-spacing: 0.18rem;
     color: #777;
     margin-bottom: 1rem;
+    text-align: left;
 }
 
 .RoomSection .roomInfo__info__text__title h2 {
