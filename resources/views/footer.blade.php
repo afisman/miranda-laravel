@@ -56,7 +56,7 @@
                 <div class="footer__sections__center__columns">
                     <div class="footer__sections__center__columns__left">
                         <ul>
-                            <li>+ Resturent & Bar</li>
+                            <li>+ Restaurant & Bar</li>
                             <li>+ Swimming Pool</li>
                             <li>+ Wellness & Spa</li>
                             <li>+ Restaurant</li>
