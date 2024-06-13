@@ -19,7 +19,7 @@
         <section class="OffersList">
             @foreach($rooms as $room)
             <div class="OffersList__item">
-                <img src={{$room['photos']}} alt="Room offer">
+                <img src={{($room->photos[0]->url)}} alt="Room offer">
                 <div class="OffersList__item__container">
                     <div class="OffersList__item__container__description">
                         <div class="OffersList__item__container__description__title">
