@@ -1197,7 +1197,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .roomSection__swiper__icons {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     gap: 1em;
@@ -1282,11 +1282,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .roomSection__swiper .swiper-button-prev {
-    transform: translate(1rem, -15rem);
+    transform: translate(1rem, -7rem);
 }
 
 .roomSection__swiper .swiper-button-next {
-    transform: translate(-1rem, -15rem);
+    transform: translate(-1rem, -7rem);
 }
 
 .roomSection__swiper .swiper-button-disabled {
@@ -1295,9 +1295,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 @media screen and (min-width: 1000px) {
-    /* .roomSection__swiper__icons {
-        max-width: 90%;
-    } */
+
+
+    .roomSection__swiper__icons {
+        display: flex;
+    }
 
     .roomSection__swiper__icons svg {
         transform: scale(1.6);
