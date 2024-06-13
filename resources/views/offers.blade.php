@@ -7,7 +7,7 @@
                     <h2>Our Offers</h2>
                 </div>
                 <div class="OffersBanner__links">
-                    <a href="./index.php" class="OffersHome">
+                    <a href="{{route('index')}}" class="OffersHome">
                         Home
                     </a>
                     <a href="#" class="OffersSelected">

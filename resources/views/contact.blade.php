@@ -7,7 +7,7 @@
                     <h2>New Details</h2>
                 </div>
                 <div class="ContactBanner__links">
-                    <a href="./index.php" class="ContactHome">
+                    <a href="{{route('index')}}" class="ContactHome">
                         Home
                     </a>
                     <a href="#" class="ContactSelected">

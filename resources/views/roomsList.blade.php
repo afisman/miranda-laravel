@@ -7,7 +7,7 @@
                     <h2>Ultimate Room</h2>
                 </div>
                 <div class="RoomsBanner__links">
-                    <a href="./index.php" class="RoomsHome">
+                    <a href="{{route('index')}}" class="RoomsHome">
                         Home
                     </a>
                     <a href="#" class="RoomsSelected">
