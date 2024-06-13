@@ -24,7 +24,7 @@
             @endcomponent
         @endif
     @endif
-     @if ($errors->any())
+    @if ($errors->any())
         @component('swal', [
                 'title' => 'Validation errors',
                 'text' => implode('\n', $errors->all()),
