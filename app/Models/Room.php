@@ -66,7 +66,7 @@ class Room extends Model
 
     public static function checkAvailability( $checkIn, $checkOut) {
        
-         $rooms = self::with(['photos', 'amenities'])->whereDoesntHave('bookings', function ($query) use ($checkIn, $check_out) {
+         $rooms = self::with(['photos', 'amenities'])->whereDoesntHave('bookings', function ($query) use ($checkIn, $checkOut) {
             $query->where('check_in', '<', $checkOut)->where('check_out', '>', $checkIn)
                 ->orWhere('check_in', '=<', $checkIn)->where('check_out', '<', $checkOut)
                 ->orWhere('check_in', '>=', $checkIn)->where('check_in', '<', $checkOut)
