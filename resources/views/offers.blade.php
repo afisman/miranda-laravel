@@ -26,6 +26,11 @@
                             <h4>{{$room['type']}}</h4>
                             <h2>{{$room['name']}}</h2>
                         </div>
+                        @foreach($room['amenities'] as $amenity)
+                            <span class="roomSection__menu-item">
+                                <img src="{{ $amenity->getAmenity() }}" alt="">
+                            </span>
+                        @endforeach
                         <div class="OffersList__item__container__description__price">
                             <h5>{{$room['rate']/100}}<p>/Night</p>
                             </h5>
